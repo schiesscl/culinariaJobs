@@ -1,5 +1,4 @@
-import Layout from "../layout/Layout"
-
+import Contador from "../Component/Contador";
 
 
 const Main = () => {
@@ -7,11 +6,7 @@ const Main = () => {
 
     return(
         <>
-        <Layout>
-            <main>
-                // Render dinamico 
-            </main>
-        </Layout>
+            <Contador />
         </>
     )
 }
