@@ -1,11 +1,12 @@
 package Back_end.entities;
 
+import Back_end.enums.RoleList;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.management.relation.RoleList;
+
 
 @Data //(tener Geter, Seter y algunos otros metodos que necesitamos)
 @NoArgsConstructor //Constructor sin arguemntos (bacio)

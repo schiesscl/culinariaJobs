@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class NewUserDto {
 
-    public String userName;
-    public String password;
+    private String userName;
+    private String password;
+    private int rol;
 }
