@@ -2,10 +2,10 @@ import { createAsyncThunk } from "@reduxjs/toolkit"
 import axios from "axios";
 
 
-export const userLogin = createAsyncThunk('user_login', async (obj) => {
+export const userLogin = createAsyncThunk('userLogin', async (obj) => {
     try {
         const { data } = await axios.post('', obj.data)
-        localStorage.setItem('token', data.response.token)
+        localStorage.setItem('token', JSON.stringify(data.response.token))
         localStorage.setItem('user', JSON.stringify(data.response.user))
 
         return {
@@ -16,14 +16,14 @@ export const userLogin = createAsyncThunk('user_login', async (obj) => {
     } catch (error) {
         console.log(error)
         return {
-            user: null
+            user: null,
+            token: null
         }
     }
 })
 
-export const userLogout = createAsyncThunk('user_logout', async () => {
+export const userLogout = createAsyncThunk('userLogout', async () => {
     try {
-
         let url = ''
         let token = localStorage.getItem('token')
         let configs = { headers: { 'Authorization': `Bearer ${token}` } }
@@ -42,10 +42,9 @@ export const userLogout = createAsyncThunk('user_logout', async () => {
     }
 })
 
-export const userSignUp = createAsyncThunk('user_sign_up', async (obj) => {
+export const userSignUp = createAsyncThunk('userSignUp', async (obj) => {
     try {
         const { data } = await axios.post('', obj)
-        console.log("funSignUp", data)
 
         return {
             user: data.response

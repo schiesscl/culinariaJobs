@@ -4,7 +4,9 @@ import Home from '../pages/home/Home'
 import Login from '../pages/login/Login';
 import Register from '../pages/register/Register';
 
-import Header from '../shared/header/Header';
+import Main from '../main/Main';
+import UserHome from '../components/userHome/UserHome';
+import userProfile from '../components/userProfile/UserProfile';
 
 const router = createBrowserRouter([
     {
@@ -20,8 +22,14 @@ const router = createBrowserRouter([
         element: <Register />
     },
     {
-        path: "/header",
-        element: <Header />
+        path: "/app",
+        element: <Main />,
+        children: [
+            {
+                path: "userHome",
+                element: <UserHome />
+            }
+        ]
     }
 
 ])
