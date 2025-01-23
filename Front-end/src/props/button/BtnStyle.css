@@ -1,0 +1,10 @@
+.btn_nocountry
+{
+    height: 3rem;
+    text-decoration: none;
+    background-color: grey;
+    border-radius: 15px;
+    padding: 15px 25px;
+    font-weight: bold;
+    color: white;
+}
