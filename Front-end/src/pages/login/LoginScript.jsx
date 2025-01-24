@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { userLogin } from '../../store/action/userAction';
-import userReducer from '../../store/reducer/userReducer';
+
 
 const LoginScript = () => 
 {
@@ -12,7 +12,7 @@ const LoginScript = () =>
         password: ''
     });
 
-    const testo = useSelector(store => store.userReducer);
+    const testo = useSelector(store => store);
 
     const handleInput = async (event) => 
     {
