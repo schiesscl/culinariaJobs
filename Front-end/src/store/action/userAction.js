@@ -42,7 +42,7 @@ export const userLogout = createAsyncThunk('userLogout', async () => {
     }
 })
 
-export const userSignUp = createAsyncThunk('userSignUp', async (obj) => {
+export const userRegister = createAsyncThunk('userRegister', async (obj) => {
     try {
         const { data } = await axios.post('', obj)
 
