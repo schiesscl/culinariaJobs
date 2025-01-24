@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit"
-import { userLogin, userLogout, userSignUp } from "../action/userAction"
+import { userLogin, userLogout, userRegister } from "../action/userAction"
 
 
 const incialStateUser = {
@@ -23,7 +23,7 @@ const userReducer = createReducer(incialStateUser,
             token: action.payload.token
         }
     })
-    .addCase(userSignUp.fulfilled, (state, action) => {
+    .addCase(userRegister.fulfilled, (state, action) => {
         return{
             ...state,
             user:action.payload

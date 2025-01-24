@@ -5,7 +5,7 @@ import LoginScript from './LoginScript';
 
 const Login = () => {
 
-  const { handleInput, handleSignIn } = LoginScript();
+  const { handleInput, handleLogin } = LoginScript();
 
   return (
     <div className='loginContainer'>
@@ -15,7 +15,7 @@ const Login = () => {
             Login
           </h1>
         </div>
-        <form onSubmit={handleSignIn} className='loginBotContainer'>
+        <form onSubmit={handleLogin} className='loginBotContainer'>
           <div>
             <label htmlFor="">
               Correo electronico:

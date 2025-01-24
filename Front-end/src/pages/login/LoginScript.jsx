@@ -1,4 +1,4 @@
-import { useDispatch, useSelector} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { userLogin } from '../../store/action/userAction';
 
@@ -6,34 +6,34 @@ const LoginScript = () =>
 {
     const dispatch = useDispatch();
 
-    const [formData, setFormData] = useState({
+    const [loginData, setLoginData] = useState({
         email: '', 
         password: ''
     });
 
-    const handleInput = (event) => 
+    const handleInput = async (event) => 
     {
-        setFormData({
-            ...formData,
+        setLoginData({
+            ...loginData,
             [event.target.name]: event.target.value
         });
-    }
+    };
 
-    const handleSignIn = async (user) => 
+    const handleLogin = async (event) => 
     {
-        user.preventDefault();
+        event.preventDefault();
         try {
             dispatch(userLogin({
-                data: formData
+                data: loginData
             }));
         } catch (error) {
-            console.log(error);
+            console.log('Error en la acción userLogin:', error);
         }
     }
 
     return {
         handleInput,
-        handleSignIn
+        handleLogin
     }
 }
 
