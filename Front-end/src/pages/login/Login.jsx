@@ -19,7 +19,7 @@ const Login = () => {
           <div>
             <label htmlFor="">
               Correo electronico:
-              <input onChange={handleInput} name='email' type="mail" />
+              <input onChange={handleInput} name='userName' type="text" />
             </label>
             <label htmlFor="">
               Contraseña:

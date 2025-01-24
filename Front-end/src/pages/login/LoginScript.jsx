@@ -1,15 +1,18 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { userLogin } from '../../store/action/userAction';
+import userReducer from '../../store/reducer/userReducer';
 
 const LoginScript = () => 
 {
     const dispatch = useDispatch();
 
     const [loginData, setLoginData] = useState({
-        email: '', 
+        userName: '', 
         password: ''
     });
+
+    const testo = useSelector(store => store.userReducer);
 
     const handleInput = async (event) => 
     {
@@ -30,6 +33,9 @@ const LoginScript = () =>
             console.log('Error en la acción userLogin:', error);
         }
     }
+
+    console.log('testo:', testo);
+    console.log('loginData:', loginData);
 
     return {
         handleInput,
