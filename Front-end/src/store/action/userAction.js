@@ -6,17 +6,17 @@ export const userLogin = createAsyncThunk('userLogin', async (obj) => {
     try {
         const { data } = await axios.post('', obj.data)
         localStorage.setItem('token', JSON.stringify(data.response.token))
-        localStorage.setItem('user', JSON.stringify(data.response.user))
+        // localStorage.setItem('user', JSON.stringify(data.response.user))
 
         return {
-            user: data.response.user,
+            // user: data.response.user,
             token: data.response.token
         }
         
     } catch (error) {
         console.log(error)
         return {
-            user: null,
+            // user: null,
             token: null
         }
     }
