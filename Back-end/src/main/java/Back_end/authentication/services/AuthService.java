@@ -1,11 +1,11 @@
-package Back_end.services;
+package Back_end.authentication.services;
 
-import Back_end.dto.NewUserDto;
-import Back_end.entities.Role;
-import Back_end.entities.User;
-import Back_end.enums.RoleList;
-import Back_end.jwt.JwtUtil;
-import Back_end.repositories.RoleRepository;
+import Back_end.authentication.dto.NewUserDto;
+import Back_end.authentication.entities.Role;
+import Back_end.authentication.entities.User;
+import Back_end.authentication.enums.RoleList;
+import Back_end.authentication.jwt.JwtUtil;
+import Back_end.authentication.repositories.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -33,6 +33,7 @@ public class AuthService {
     }
 
     public String authenticate(String username, String password){
+
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username,password);
         Authentication authResult = authenticationManagerBuilder.getObject().authenticate(authenticationToken);
         SecurityContextHolder.getContext().setAuthentication(authResult);
@@ -45,7 +46,13 @@ public class AuthService {
         }
         RoleList role = RoleList.getById(newUserDto.getRol());
         Role roleUser = roleRepository.findByName(role).orElseThrow(()->new RuntimeException("Rol no encontrado"));
-        User user = new User(newUserDto.getUserName(), passwordEncoder.encode(newUserDto.getPassword()) , roleUser);
+        User user = User.builder()
+                .userName(newUserDto.getUserName())
+                .name(newUserDto.getUserName())
+                .last_name(newUserDto.getLast_name())
+                .password(passwordEncoder.encode(newUserDto.getPassword()))
+                .role(roleUser)
+                .build();
         userService.save(user);
     }
 }

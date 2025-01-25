@@ -1,6 +1,6 @@
-package Back_end.repositories;
+package Back_end.authentication.repositories;
 
-import Back_end.entities.User;
+import Back_end.authentication.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
