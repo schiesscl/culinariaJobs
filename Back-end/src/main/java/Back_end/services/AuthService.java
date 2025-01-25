@@ -33,6 +33,7 @@ public class AuthService {
     }
 
     public String authenticate(String username, String password){
+
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username,password);
         Authentication authResult = authenticationManagerBuilder.getObject().authenticate(authenticationToken);
         SecurityContextHolder.getContext().setAuthentication(authResult);
@@ -45,7 +46,13 @@ public class AuthService {
         }
         RoleList role = RoleList.getById(newUserDto.getRol());
         Role roleUser = roleRepository.findByName(role).orElseThrow(()->new RuntimeException("Rol no encontrado"));
-        User user = new User(newUserDto.getUserName(), passwordEncoder.encode(newUserDto.getPassword()) , roleUser);
+        User user = User.builder()
+                .userName(newUserDto.getUserName())
+                .name(newUserDto.getUserName())
+                .last_name(newUserDto.getLast_name())
+                .password(passwordEncoder.encode(newUserDto.getPassword()))
+                .role(roleUser)
+                .build();
         userService.save(user);
     }
 }

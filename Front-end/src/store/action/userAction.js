@@ -4,7 +4,9 @@ import axios from "axios";
 
 export const userLogin = createAsyncThunk('userLogin', async (obj) => {
     try {
-        const { data } = await axios.post('', obj.data)
+        const { data } = await axios.post('http://localhost:8080/auth/login', obj.data)
+        console.log({data});
+        
         localStorage.setItem('token', JSON.stringify(data.response.token))
         // localStorage.setItem('user', JSON.stringify(data.response.user))
 
