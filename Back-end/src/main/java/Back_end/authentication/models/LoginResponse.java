@@ -1,4 +1,4 @@
-package Back_end.models;
+package Back_end.authentication.models;
 
 import lombok.Builder;
 import lombok.Data;

@@ -1,7 +1,7 @@
-package Back_end.config;
+package Back_end.authentication.config;
 
-import Back_end.jwt.JwtAuthenticationFilter;
-import Back_end.jwt.JwtEntryPoint;
+import Back_end.authentication.jwt.JwtAuthenticationFilter;
+import Back_end.authentication.jwt.JwtEntryPoint;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;

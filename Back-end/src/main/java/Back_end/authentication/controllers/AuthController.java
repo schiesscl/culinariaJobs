@@ -1,11 +1,11 @@
-package Back_end.controllers;
+package Back_end.authentication.controllers;
 
-import Back_end.dto.LoginUserDto;
-import Back_end.dto.NewUserDto;
-import Back_end.entities.User;
-import Back_end.models.LoginResponse;
-import Back_end.services.AuthService;
-import Back_end.services.UserService;
+import Back_end.authentication.dto.LoginUserDto;
+import Back_end.authentication.dto.NewUserDto;
+import Back_end.authentication.entities.User;
+import Back_end.authentication.models.LoginResponse;
+import Back_end.authentication.services.AuthService;
+import Back_end.authentication.services.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,7 +1,7 @@
-package Back_end.services;
+package Back_end.authentication.services;
 
-import Back_end.entities.User;
-import Back_end.repositories.UserRepository;
+import Back_end.authentication.entities.User;
+import Back_end.authentication.repositories.UserRepository;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

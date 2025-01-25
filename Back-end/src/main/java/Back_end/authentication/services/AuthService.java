@@ -1,11 +1,11 @@
-package Back_end.services;
+package Back_end.authentication.services;
 
-import Back_end.dto.NewUserDto;
-import Back_end.entities.Role;
-import Back_end.entities.User;
-import Back_end.enums.RoleList;
-import Back_end.jwt.JwtUtil;
-import Back_end.repositories.RoleRepository;
+import Back_end.authentication.dto.NewUserDto;
+import Back_end.authentication.entities.Role;
+import Back_end.authentication.entities.User;
+import Back_end.authentication.enums.RoleList;
+import Back_end.authentication.jwt.JwtUtil;
+import Back_end.authentication.repositories.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;

@@ -1,4 +1,4 @@
-package Back_end.entities;
+package Back_end.authentication.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
