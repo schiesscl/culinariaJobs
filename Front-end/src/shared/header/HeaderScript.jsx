@@ -4,8 +4,6 @@ const HeaderScript = () => {
 
     const data = useSelector(store => store.userReducer);
 
-    console.log(data);
-
     const ShowMenu = () => {
         if (data.user != null && data.user.rol === "user") {
             return (

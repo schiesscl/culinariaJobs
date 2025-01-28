@@ -1,11 +1,11 @@
 import { createReducer } from "@reduxjs/toolkit"
-import { userLogin, userLogout, userRegister } from "../action/userAction"
+import { userLogin, userLogout, userRegister, userDelete, userEdit } from "../action/userAction"
 
 
 const inicialStateUser = {
     user: {
         id: 1,
-        name: "Roman",
+        name: "Fil",
         lastName: "Gonzalez",
         photo: "https://d1zzxdyvtq79bu.cloudfront.net/context/frontend/landing/header_hero_masonry/chef/chef-10.jpg",
         email: "RomanGonzales@hotmail.com",
@@ -27,13 +27,12 @@ const inicialStateUser = {
         skills: ["Cocina rapida", "Trabajo en equipo", "Aprendizaje rapido"],
         aboutMe: "Soy un chef con 2 años de experiencia en cocina rapida, me gusta trabajar en equipo y aprender cosas nuevas",
         cv: "https://drive.google.com/file/d/",
-        rol: "user"
+        rol: "admin"
     },
     token: null
 }
 
-const userReducer = createReducer(inicialStateUser,
-    (builder) => builder 
+const userReducer = createReducer(inicialStateUser,(builder) => builder 
     .addCase(userLogin.fulfilled, (state, action) => {
         return {
             ...state,
@@ -44,16 +43,28 @@ const userReducer = createReducer(inicialStateUser,
     .addCase(userLogout.fulfilled, (state, action) => {
         return{
             ...state,
-            user: action.payload.user,
-            token: action.payload.token
+            user: null,
+            token: null
         }
     })
     .addCase(userRegister.fulfilled, (state, action) => {
         return{
             ...state,
-            user:action.payload
+            user:action.payload.user
+        }
+    })
+    .addCase(userDelete.fulfilled, (state, action) => {
+        return{
+            ...state,
+            user:action.payload.user
+        }
+    })
+    .addCase(userEdit.fulfilled, (state, action) => {
+        return{
+            ...state,
+            user:action.payload.user
         }
     })
 )
 
-export default userReducer
+export default userReducer;
