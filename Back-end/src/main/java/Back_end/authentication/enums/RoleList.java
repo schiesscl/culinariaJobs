@@ -1,4 +1,4 @@
-package Back_end.enums;
+package Back_end.authentication.enums;
 
 public enum RoleList {
     ROLE_USER, ROLE_ADMIN;

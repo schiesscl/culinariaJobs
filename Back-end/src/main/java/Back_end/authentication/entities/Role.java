@@ -1,6 +1,6 @@
-package Back_end.entities;
+package Back_end.authentication.entities;
 
-import Back_end.enums.RoleList;
+import Back_end.authentication.enums.RoleList;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
