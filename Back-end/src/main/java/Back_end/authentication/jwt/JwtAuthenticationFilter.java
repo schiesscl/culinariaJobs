@@ -1,6 +1,6 @@
-package Back_end.jwt;
+package Back_end.authentication.jwt;
 
-import Back_end.services.UserService;
+import Back_end.authentication.services.UserService;
 import io.micrometer.common.lang.NonNullApi;
 import io.micrometer.common.lang.NonNullFields;
 import jakarta.servlet.FilterChain;

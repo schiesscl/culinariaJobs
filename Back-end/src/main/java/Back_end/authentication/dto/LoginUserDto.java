@@ -1,4 +1,4 @@
-package Back_end.dto;
+package Back_end.authentication.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

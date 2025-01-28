@@ -1,4 +1,4 @@
-package Back_end.jwt;
+package Back_end.authentication.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

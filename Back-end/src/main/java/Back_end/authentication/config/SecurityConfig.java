@@ -1,7 +1,7 @@
-package Back_end.config;
+package Back_end.authentication.config;
 
-import Back_end.jwt.JwtAuthenticationFilter;
-import Back_end.jwt.JwtEntryPoint;
+import Back_end.authentication.jwt.JwtAuthenticationFilter;
+import Back_end.authentication.jwt.JwtEntryPoint;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -54,7 +54,7 @@ public class SecurityConfig {
     CorsConfigurationSource corsConfigurationSource(){
         CorsConfiguration configuration = new CorsConfiguration();
 
-        configuration.setAllowedOrigins(List.of("http://localhost:4200"));
+        configuration.setAllowedOrigins(List.of("http://localhost:5173"));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("Authorization", "Content-Type"));
         configuration.setAllowCredentials(true);
