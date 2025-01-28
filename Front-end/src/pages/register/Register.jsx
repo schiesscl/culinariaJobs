@@ -8,43 +8,39 @@ const Register = () => {
   const { handleInput, handleRegister } = RegisterScript()
 
   return (
-    <div className="registerContainer">
-      <div className='registerCard'>
-        <div className='registerTopContainer'>
-          <h1>
+    <div className="formContainer">
+      <div className='formCard'>
+          <h1 className='formTitle'>
             Register
           </h1>
-        </div>
-        <form onSubmit={handleRegister} className='registerBotContainer'>
-          <div>
+        <form onSubmit={handleRegister} className='formSection'>
+          <div className='laberContainer'>
             <label htmlFor="">
               Nombre:
-              <input onChange={handleInput} type="mail" name='userName' />
+              <input className='inputForm' onChange={handleInput} type="mail" name='userName' />
             </label>
             <label htmlFor="">
               Apellido:
-              <input onChange={handleInput} type="mail" name='userLastName' />
+              <input className='inputForm' onChange={handleInput} type="mail" name='userLastName' />
             </label>
             <label htmlFor="">
               Correo electronico:
-              <input onChange={handleInput} type="mail" name='email' />
+              <input className='inputForm' onChange={handleInput} type="mail" name='email' />
             </label>
             <label htmlFor="">
               Contraseña:
-              <input onChange={handleInput} type="password" name='password' />
+              <input className='inputForm' onChange={handleInput} type="password" name='password' />
             </label>
             <label htmlFor="">
               Confirmar contraseña:
-              <input onChange={handleInput} type="password" name='confirmpassword' />
+              <input className='inputForm' onChange={handleInput} type="password" name='confirmpassword' />
             </label>
           </div>
-          <div className='registerBtnContinaer'>
-            <button>Registrarse</button>
-            <Btn to={"/"} title={"volver"} />
+          <div className='buttContainer'>
+            <button className='btnNoCountry'>Registrarse</button>
+            <Btn  to={"/"} title={"volver"} />
           </div>
         </form>
-        <div>
-        </div>
       </div>
     </div>
   );

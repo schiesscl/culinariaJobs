@@ -4,19 +4,19 @@ import axios from "axios";
 
 export const userLogin = createAsyncThunk('userLogin', async (obj) => {
     try {
-        const { data } = await axios.post('', obj.data)
-        localStorage.setItem('token', JSON.stringify(data.response.token))
-        // localStorage.setItem('user', JSON.stringify(data.response.user))
+        const { data } = await axios.post('http://localhost:8080/auth/login', obj.data)
+        localStorage.setItem('token', data.response.token)
+        localStorage.setItem('user', JSON.stringify(data.response.user))
 
         return {
-            // user: data.response.user,
+            user: data.response.user,
             token: data.response.token
         }
         
     } catch (error) {
         console.log(error)
         return {
-            // user: null,
+            user: null,
             token: null
         }
     }
@@ -48,9 +48,9 @@ export const userRegister = createAsyncThunk('userRegister', async (obj) => {
 
         return {
             user: data.response
-
         }
     } catch (error) {
         console.log(error)
     }
 })
+
