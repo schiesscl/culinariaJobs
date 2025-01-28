@@ -8,28 +8,29 @@ const Login = () => {
   const { handleInput, handleLogin } = LoginScript();
 
   return (
-    <div className='loginContainer'>
-      <div className='loginCard'>
-        <div className='loginTopContainer'>
-          <h1>
+    <div className='formContainer'>
+      <div className='formCard'>
+          <h1 className='formTitle'>
             Login
           </h1>
-        </div>
-        <form onSubmit={handleLogin} className='loginBotContainer'>
-          <div>
-            <label htmlFor="">
+        <form onSubmit={handleLogin} className='formSection'>
+
+          <div className='laberContainer'>
+            <label className='labelForm'>
               Correo electronico:
-              <input onChange={handleInput} name='userName' type="text" />
+              <input className='inputForm' onChange={handleInput} name='userName' type="text" placeholder='Correo electronico' />
             </label>
-            <label htmlFor="">
+            <label className='labelForm'>
               Contraseña:
-              <input onChange={handleInput} name='password' type="password" />
+              <input className='inputForm' onChange={handleInput} name='password' type="password" placeholder='Contraseña' />
             </label>
           </div>
-          <div className='loginBtnContinaer'>
-            <button>Ingresar</button>
-            <Btn to={"/"} title={"volver"} />
+
+          <div className='buttContainer'>
+            <button className='btnNoCountry'>Ingresar</button>
+            <Btn title='Volver' to='/' />
           </div>
+
         </form>
       </div>
     </div>
