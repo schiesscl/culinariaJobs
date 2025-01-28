@@ -1,18 +1,22 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const BASE_URL = '';
 
 export const createJob = createAsyncThunk("createJob", async(obj) => 
 {
     try{
-        const { data } = await axios.post('', obj)
+        const { data } = await axios.post(`${BASE_URL}`, obj)
 
         return{
             jobs: data.response.jobs
         }
     } catch (error)
     {
-        console.log(error)
+        console.error('Error crearte job:', error);
+        return {
+            jobs: null
+        };
     }
 })
 
@@ -20,51 +24,70 @@ export const editJob = createAsyncThunk("editJob", async(obj) =>
 {
     try
     {
-        const { data } = await axios.put('', obj)
+        const { data } = await axios.put(`${BASE_URL}`, obj)
+        return{
+            jobs: data.response.jobs
+        }
     }
     catch(error)
     {
-        console.log(error)
+        console.error('Error edit job:', error);
+        return {
+            jobs: null
+        };
     }
 })
 
-// traigo todos los trabajos
+
 export const getJobs = createAsyncThunk("getJobs", async () => 
 {
     try 
     {
-        const response = await axios.get("")
+        const response = await axios.get(`${BASE_URL}`)
         return {
             jobs: response.data.jobs
         }
     } catch (error)
     {
-        console.log(error)
+        console.error('Error get job:', error);
+        return {
+            jobs: null
+        };
     }
 })
 
-// traigo los trabajos por ID
+
 export const getJobByID = createAsyncThunk("getJobByID", async (obj) => 
 {
     try 
     {
-        const response = await axios.get(`${obj.id}`)
+        const response = await axios.get(`${BASE_URL}/${obj.id}`)
         return {
             jobs: response.data.jobs
         }
     } catch (error)
     {
-        console.log(error)
+        console.error('Error get job by id:', error);
+        return {
+            jobs: null
+        };
     }
 })
 
-export const deleteJob = createAsyncThunk("deleteJob", async() => 
+export const deleteJob = createAsyncThunk("deleteJob", async(obj) => 
 {
     try{
-        const response = await axios.delete(`${obj.id}`)
+        const response = await axios.delete(`${BASE_URL}`, {data:obj})
+        return{
+            jobs: [],
+            success: true
+        }
     }
     catch (error)
     {
-        console.log(error)
+        console.error('Error delete job:', error);
+        return {
+            success: false
+        };
     }
 })

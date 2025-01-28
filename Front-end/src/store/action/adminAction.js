@@ -17,3 +17,4 @@ export const getUsers = createAsyncThunk("getUsers", async () =>
         console.log(error)
     }
 })
+
