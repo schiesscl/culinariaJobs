@@ -11,7 +11,6 @@ const RegisterScript = () =>
         userLastName: '',
         email: '',
         password: '',
-        confirmpassword: ''
     })
 
     const handleInput = async (event) => 
@@ -33,8 +32,6 @@ const RegisterScript = () =>
         }
 
     }
-
-    console.log(registerData)
 
     return {
         handleInput,

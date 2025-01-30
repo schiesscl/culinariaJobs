@@ -7,6 +7,9 @@ import Register from '../pages/register/Register';
 import Main from '../main/Main';
 import UserHome from '../pages/userHome/UserHome';
 import UserProfile from '../pages/userProfile/UserProfile';
+import UserReview from '../pages/userReview/userReview';
+
+import WorkDetails from '../pages/workDetails/WorkDetails';
 
 import Dashboard from '../pages/Dashboard/Dashboard'; 
 
@@ -66,6 +69,22 @@ const router = createBrowserRouter([
                 element: (
                     <ProtectedRoute allowedRoles={['admin']} path={"/404"}>
                         <Dashboard />
+                    </ProtectedRoute>
+                )
+            },
+            {
+                path: "userReview/:id",
+                element: (
+                    <ProtectedRoute allowedRoles={['admin']} path={"/404"}>
+                        <UserReview />
+                    </ProtectedRoute>
+                )
+            },
+            {
+                path: "workDetail/:id",
+                element: (
+                    <ProtectedRoute allowedRoles={['user', 'admin']} path={"/404"}>
+                        <WorkDetails />
                     </ProtectedRoute>
                 )
             }

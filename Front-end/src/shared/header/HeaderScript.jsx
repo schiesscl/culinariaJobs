@@ -1,23 +1,45 @@
 import { useSelector } from "react-redux";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { userLogout } from "../../store/action/userAction";
+
+import Btn from "../../props/button/Btn";
 
 const HeaderScript = () => {
 
-    const data = useSelector(store => store.userReducer);
+    const userActive = useSelector(store => store.userReducer.user);
+
+    const dispatch = useDispatch()
+
+    const handleSignOut = () =>
+    {
+        dispatch(userLogout())
+        setTimeout(() => {
+            window.location.reload()
+        }, 1)
+    }
+
+
+    const [showMenu, setShowMenu] = useState(null)
 
     const ShowMenu = () => {
-        if (data.user != null && data.user.rol === "user") {
-            return (
-                <div>
-                    <a href="/perfil">Perfil</a>
-                    <a href="/logout">Salir</a>
-                </div>
-            );
-        }
-        return null;
+        setShowMenu(
+            <div>
+                <Btn title="Home" to="/app/userHome" />
+                <Btn title="Perfil" to={`/app/userProfile/${userActive.id}`} />
+                {
+                userActive.rol === "admin" ? 
+                <Btn title="Dasboard" to="/app/dashboard" /> : null
+                }
+                <button onClick={handleSignOut}>Salir</button>
+            </div>
+        )
     }
-    return { 
-        ShowMenu
-     };
+
+    return {
+        ShowMenu,
+        showMenu
+    };
 }
 
 export default HeaderScript;

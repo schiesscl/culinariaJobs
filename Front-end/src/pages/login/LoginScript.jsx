@@ -12,7 +12,7 @@ const LoginScript = () =>
         password: ''
     });
 
-    const testo = useSelector(store => store);
+    const testo = useSelector(store => store.userReducer.user);
 
     const handleInput = async (event) => 
     {
@@ -34,9 +34,6 @@ const LoginScript = () =>
         }
         console.log('testo:', testo);
     }
-
-    
-    console.log('loginData:', loginData);
 
     return {
         handleInput,

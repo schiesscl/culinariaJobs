@@ -1,16 +1,14 @@
 
-
 import './UserProfileStyle.css'
+
 import UserProfileScript from './UserProfileScript'
-import { useParams } from 'react-router-dom';
 
 const userProfile = () => {
 
-    const { id } = useParams()
-
-    console.log(id)
-
     const { data, professions, experience, education, cv } = UserProfileScript();
+
+
+
 
     return (
         <div className="user-profile-container">
