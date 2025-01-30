@@ -43,7 +43,7 @@ export const getJobs = createAsyncThunk("getJobs", async () =>
 {
     try 
     {
-        const response = await axios.get(`${BASE_URL}`)
+        //const response = await axios.get(`${BASE_URL}`)
         return {
             jobs: [
                 {id:1, title:"Trabajo1"},

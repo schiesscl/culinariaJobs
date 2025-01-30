@@ -1,3 +1,5 @@
+import Btn from '../../props/button/Btn';
+import { useSelector } from 'react-redux';
 
 import './UserProfileStyle.css'
 
@@ -7,7 +9,7 @@ const userProfile = () => {
 
     const { data, professions, experience, education, cv } = UserProfileScript();
 
-
+    const id = useSelector(store => store.userReducer.user.id)
 
 
     return (
@@ -55,7 +57,7 @@ const userProfile = () => {
                     </section>
                 </div>
                 <div className='buttContainerProfile'>
-                    <button className='btnNoCountry'>Editar</button>
+                    <Btn title="Editar" to={`/app/userEditProfile/${id}`} />
                     <button className='btnNoCountry'>Eliminar</button>
                 </div>
             </div>

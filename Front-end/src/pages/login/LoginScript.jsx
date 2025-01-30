@@ -12,7 +12,7 @@ const LoginScript = () =>
         password: ''
     });
 
-    const testo = useSelector(store => store.userReducer.user);
+    const testo = useSelector(store => store.userReducer);
 
     const handleInput = async (event) => 
     {
@@ -32,7 +32,7 @@ const LoginScript = () =>
         } catch (error) {
             console.log('Error en la acción userLogin:', error);
         }
-        console.log('testo:', testo);
+        console.log(testo)
     }
 
     return {

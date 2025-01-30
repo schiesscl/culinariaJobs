@@ -17,15 +17,15 @@ const Register = () => {
           <div className='laberContainer'>
             <label htmlFor="">
               Nombre:
-              <input className='inputForm' onChange={handleInput} type="mail" name='userName' />
+              <input className='inputForm' onChange={handleInput} type="text" name='name' />
             </label>
             <label htmlFor="">
               Apellido:
-              <input className='inputForm' onChange={handleInput} type="mail" name='userLastName' />
+              <input className='inputForm' onChange={handleInput} type="text" name='last_name' />
             </label>
             <label htmlFor="">
               Correo electronico:
-              <input className='inputForm' onChange={handleInput} type="mail" name='email' />
+              <input className='inputForm' onChange={handleInput} type="text" name='userName' />
             </label>
             <label htmlFor="">
               Contraseña:

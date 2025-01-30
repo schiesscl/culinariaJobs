@@ -9,7 +9,7 @@ import ListWork from "../../props/listWork/ListWork";
 const DashboardScript = () => {
     const jobs = useSelector(store => store.jobsReducer.jobs);
     const users = useSelector(store => store.adminReducer.users);
-    
+
     const dispatch = useDispatch();
     const [renderList, setRenderList] = useState(null);
 
@@ -26,12 +26,27 @@ const DashboardScript = () => {
         setRenderList(<ListWork data={jobs} />);
     };
 
+    const RenderCreateWorks = () => {
+        setRenderList(
+            <form>
+                <label htmlFor="">Trabajo
+                    <input type="text" name="" id="" />
+                </label>
+                <label htmlFor="">Salario
+                    <input type="number" name="" id="" />
+                </label>
+                <button>Crear trabajo</button>
+            </form>
+        )
+    }
+
     return {
         jobs,
         users,
         renderList,
         RenderUsersList,
-        RenderWorksList
+        RenderWorksList,
+        RenderCreateWorks
     };
 };
 
