@@ -3,14 +3,14 @@ import { useSelector } from "react-redux";
 
 const ProtectedRoute = ({ children, allowedRoles, path }) => {
 
-    const userRole = useSelector(store => store.userReducer.user.rol);
+    const userActive = useSelector(store => store.userReducer.user);
 
-    if(allowedRoles.includes("anyone") && !userRole)
+    if(allowedRoles.includes("anyone") && userActive == null) 
     {
         return children;
     }
 
-    if (allowedRoles.includes(userRole)) {
+    if (allowedRoles.includes(userActive.rol)) {
         return children;
     }
 

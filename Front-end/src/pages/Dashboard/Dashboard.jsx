@@ -3,7 +3,7 @@ import DashboardScript from "./DashboardScript";
 
 const Dashboard = () => 
 {
-    const { jobs, users, renderList, RenderUsersList, RenderWorksList } = DashboardScript();
+    const { jobs, users, renderList, RenderUsersList, RenderWorksList, RenderCreateWorks } = DashboardScript();
 
     console.log( "trabajos: ", jobs)
     console.log( "usuarios: ", users)
@@ -11,8 +11,9 @@ const Dashboard = () =>
     return (
         <div className="Dashboard-container">
             <div>
-                <button onClick={RenderUsersList}>usuarios</button>
-                <button onClick={RenderWorksList}>trabajos</button>
+                <button onClick={RenderUsersList}>ver usuarios</button>
+                <button onClick={RenderWorksList}>ver trabajos</button>
+                <button onClick={RenderCreateWorks}>crear trabajo</button>
             </div>
 
             <div>

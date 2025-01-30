@@ -22,6 +22,9 @@ const UserReview = () => {
         <h1>
             estoy en la id: {id}
         </h1>
+        <button>
+            eliminar
+        </button>
         </>
     )
 }

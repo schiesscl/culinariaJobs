@@ -7,9 +7,9 @@ const RegisterScript = () =>
     const dispatch = useDispatch();
 
     const [registerData, setRegisterData] = useState({
+        name: '',
+        last_name: '',
         userName: '',
-        userLastName: '',
-        email: '',
         password: '',
     })
 
@@ -20,6 +20,8 @@ const RegisterScript = () =>
             [event.target.name]: event.target.value
         })
     };
+
+    console.log(registerData)
 
 
     const handleRegister = async (event) => {

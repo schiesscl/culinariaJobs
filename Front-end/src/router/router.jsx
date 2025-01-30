@@ -8,8 +8,10 @@ import Main from '../main/Main';
 import UserHome from '../pages/userHome/UserHome';
 import UserProfile from '../pages/userProfile/UserProfile';
 import UserReview from '../pages/userReview/userReview';
+import UserEditProfile from '../pages/userEdit/UserEditProfile';
 
 import WorkDetails from '../pages/workDetails/WorkDetails';
+import WorkEdit from '../pages/workEdit/WorkEdit';
 
 import Dashboard from '../pages/Dashboard/Dashboard'; 
 
@@ -81,10 +83,26 @@ const router = createBrowserRouter([
                 )
             },
             {
+                path: "userEditProfile/:id",
+                element: (
+                    <ProtectedRoute allowedRoles={['user', 'admin']} path={"/404"}>
+                        <UserEditProfile />
+                    </ProtectedRoute>
+                )
+            },
+            {
                 path: "workDetail/:id",
                 element: (
                     <ProtectedRoute allowedRoles={['user', 'admin']} path={"/404"}>
                         <WorkDetails />
+                    </ProtectedRoute>
+                )
+            },
+            {
+                path:"workEdit/:id",
+                element:(
+                    <ProtectedRoute allowedRoles={['admin']} path={"/404"}>
+                        <WorkEdit />
                     </ProtectedRoute>
                 )
             }
