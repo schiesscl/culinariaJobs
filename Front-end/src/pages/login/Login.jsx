@@ -5,6 +5,10 @@ import LoginScript from './LoginScript';
 
 const Login = () => {
 
+    /*
+    Testiado - funciona perfecto
+    */
+
   const { handleInput, handleLogin } = LoginScript();
 
   return (

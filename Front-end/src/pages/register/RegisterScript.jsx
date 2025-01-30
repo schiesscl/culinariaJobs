@@ -4,6 +4,11 @@ import { userRegister } from '../../store/action/userAction';
 
 const RegisterScript = () => 
 {
+
+    /*
+    Testiado - funciona perfecto
+    */
+
     const dispatch = useDispatch();
 
     const [registerData, setRegisterData] = useState({
@@ -20,8 +25,6 @@ const RegisterScript = () =>
             [event.target.name]: event.target.value
         })
     };
-
-    console.log(registerData)
 
 
     const handleRegister = async (event) => {
