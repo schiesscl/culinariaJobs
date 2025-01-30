@@ -1,13 +1,15 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import axios from "axios";
 
-const BASE_URL = '';
+const BASE_URL = 'https://back-end-latest-ggv4.onrender.com/';
 
 export const userLogin = createAsyncThunk('userLogin', async (obj) => {
     try {
         const { data } = await axios.post(`${BASE_URL}/auth/login`, obj.data)
         localStorage.setItem('token', data.response.token)
         localStorage.setItem('user', JSON.stringify(data.response.user))
+
+        console.log( "devuelve esto" + data)
 
         return {
             user: data.response.user,
@@ -49,6 +51,8 @@ export const userLogout = createAsyncThunk('userLogout', async () => {
 export const userRegister = createAsyncThunk('userRegister', async (obj) => {
     try {
         const { data } = await axios.post(`${BASE_URL}/auth/register`, obj)
+
+        console.log(Registrado)
         return {
             user: data.response
         }

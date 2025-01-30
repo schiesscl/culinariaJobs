@@ -1,7 +1,10 @@
 import { useSelector } from "react-redux"
+import { useParams } from "react-router-dom";
 
 const UserProfileScript = () => {
     const data = useSelector(store => store.userReducer);
+
+    const id = useParams()
 
     const professions = data.user.profession.map((prof) => prof + "").join(" - ");
 

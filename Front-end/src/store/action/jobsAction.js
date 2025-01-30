@@ -45,7 +45,11 @@ export const getJobs = createAsyncThunk("getJobs", async () =>
     {
         const response = await axios.get(`${BASE_URL}`)
         return {
-            jobs: response.data.jobs
+            jobs: [
+                {id:1, title:"Trabajo1"},
+                {id:2, title:"Trabajo1"},
+                {id:3, title:"Trabajo1"},
+            ]
         }
     } catch (error)
     {
@@ -63,7 +67,7 @@ export const getJobByID = createAsyncThunk("getJobByID", async (obj) =>
     {
         const response = await axios.get(`${BASE_URL}/${obj.id}`)
         return {
-            jobs: response.data.jobs
+            jobs: {id:2, title:"Trabajo1"},
         }
     } catch (error)
     {

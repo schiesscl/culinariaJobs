@@ -27,7 +27,7 @@ const inicialStateUser = {
         skills: ["Cocina rapida", "Trabajo en equipo", "Aprendizaje rapido"],
         aboutMe: "Soy un chef con 2 años de experiencia en cocina rapida, me gusta trabajar en equipo y aprender cosas nuevas",
         cv: "https://drive.google.com/file/d/",
-        rol: "admin"
+        rol: "user"
     },
     token: null
 }

@@ -2,7 +2,7 @@ import HeaderScript from "./HeaderScript";
 import "./HeaderStyle.css";
 
 const Header = () => {
-    const { ShowMenu } = HeaderScript();
+    const { showMenu, ShowMenu } = HeaderScript();
 
     return (
         <header className="headerContainer">
@@ -10,7 +10,12 @@ const Header = () => {
                 CulinariJobs
             </figure>
             <nav>
-                { ShowMenu() }
+                <div onClick={ShowMenu}>
+                    <h1>Menu</h1>
+                </div>
+                {
+                    showMenu
+                }
             </nav>
         </header>
     );

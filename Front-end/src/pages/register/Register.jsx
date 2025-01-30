@@ -31,10 +31,6 @@ const Register = () => {
               Contraseña:
               <input className='inputForm' onChange={handleInput} type="password" name='password' />
             </label>
-            <label htmlFor="">
-              Confirmar contraseña:
-              <input className='inputForm' onChange={handleInput} type="password" name='confirmpassword' />
-            </label>
           </div>
           <div className='buttContainer'>
             <button className='btnNoCountry'>Registrarse</button>
