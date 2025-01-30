@@ -16,7 +16,9 @@ const UserHome = () => {
     return (
         <div className="user-home-container">
             <h1>User Home</h1>
-            <ListWork data={jobs} />
+            <div>
+                <ListWork data={jobs} />
+            </div>
         </div>
     );
 };
