@@ -1,35 +1,68 @@
 import { useSelector } from "react-redux"
-import { useParams } from "react-router-dom";
 
 const UserProfileScript = () => {
-    const data = useSelector(store => store.userReducer);
+    const data = useSelector(store => store.userReducer.user);
 
-    const id = useParams()
+    console.log(data)
 
-    const professions = data.user.profession.map((prof) => prof + "").join(" - ");
+    const professions = () => {
+        if (data.profession == null) {
+            return "Sin profesión";
+        } else {
+            return data.profession.map((prof) => prof + "").join(" - ");
+        }
+    }
 
-    const experience = data.user.experience.map((exp) => (
-        <p key={exp.position}>
-            {exp.company} - {exp.position} - {exp.date}
-        </p>
-    ));
 
-    const education = data.user.education.map((edu) => (
-        <p key={edu.degree}>
-            {edu.degree} - {edu.school} - {edu.date}
-        </p>
-    ));
+    const experience = () => {
+        if (data.experience == null) {
+            return (
+                <p key="sin_experiencia">
+                    Sin experiencia
+                </p>
+            );
+        } else {
+            return data.experience.map((exp) => (
+                <p key={exp.position}>
+                    {exp.company} - {exp.position} - {exp.date}
+                </p>
+            ));
+        }
+    }
 
-    const cv = data.user.cv != "" ? (
-        <article>
-            <h3>Curriculum</h3>
-            <figure>
-                <a href={data.user.cv} target="_blank" rel="noopener noreferrer">
-                    <img src="https://img.icons8.com/?size=100&id=104082&format=png&color=000000" alt="CV Icon" />
-                </a>
-            </figure>
-        </article>
-    ) : null;
+    const education = () => {
+        if (data.education == null) {
+            return (
+                <p key="sin_formacion">
+                    Sin formacion academica
+                </p>
+            )
+        } else {
+            return data.user.education.map((edu) => (
+                <p key={edu.degree}>
+                    {edu.degree} - {edu.school} - {edu.date}
+                </p>
+            ));
+        }
+    }
+
+    const cv = () => {
+        if (data.cv == null) {
+            return null
+        } else {
+            return (
+                <article key="curriculum">
+                    <h3>Curriculum</h3>
+                    <figure>
+                        <a href={data.cv} target="_blank" rel="noopener noreferrer">
+                            <img src="https://img.icons8.com/?size=100&id=104082&format=png&color=000000" alt="CV Icon" />
+                        </a>
+                    </figure>
+                </article>
+            );
+        }
+    };
+
 
     return {
         data,

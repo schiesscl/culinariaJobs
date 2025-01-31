@@ -8,8 +8,8 @@ const LoginScript = () =>
     const dispatch = useDispatch();
 
     const [loginData, setLoginData] = useState({
-        userName: '', 
-        password: ''
+        email:'', 
+        password:''
     });
 
     const testo = useSelector(store => store.userReducer);
