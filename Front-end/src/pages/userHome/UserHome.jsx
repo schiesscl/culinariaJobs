@@ -7,11 +7,15 @@ import ListWork from "../../props/listWork/ListWork";
 
 const UserHome = () => {
     const jobs = useSelector(store => store.jobsReducer.jobs) || [];
+    const user = useSelector(store => store.userReducer.user)
+
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(getJobs());
     }, [dispatch]);
+
+    console.log("usuario activo: ", user)
 
     return (
         <div className="user-home-container">

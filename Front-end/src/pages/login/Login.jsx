@@ -22,7 +22,7 @@ const Login = () => {
           <div className='laberContainer'>
             <label className='labelForm'>
               Correo electronico:
-              <input className='inputForm' onChange={handleInput} name='userName' type="text" placeholder='Correo electronico' />
+              <input className='inputForm' onChange={handleInput} name='email' type="text" placeholder='Correo electronico' />
             </label>
             <label className='labelForm'>
               Contraseña:

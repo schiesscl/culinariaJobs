@@ -1,36 +1,39 @@
 import Btn from '../../props/button/Btn';
-import { useSelector } from 'react-redux';
 
 import './UserProfileStyle.css'
 
 import UserProfileScript from './UserProfileScript'
 
-const userProfile = () => {
+const UserProfile = () => {
 
     const { data, professions, experience, education, cv } = UserProfileScript();
 
-    const id = useSelector(store => store.userReducer.user.id)
-
+    if (!data) {
+        return (
+            <h1>Cargando</h1>
+        );
+    }
 
     return (
         <div className="user-profile-container">
             <div className='user-profile-card'>
+
                 <div className='user-profile-user-data'>
                     <h2>
-                        {data.user.name + " " + data.user.lastName}
+                        {data.name + " " + data.last_name}
                     </h2>
                     <figure>
-                        <img className='user-photo-card' src={data.user.photo} alt="" />
+                        <img className='user-photo-card' src={data.photo} alt="foto de usuario" />
                     </figure>
                     <h3>
-                        {professions}
+                        {professions()}
                     </h3>
                     <div>
                         <p>
-                            <strong>Email: {data.user.email} </strong>
+                            <strong>Email: {data.email}</strong>
                         </p>
                         <p>
-                            <strong>Phone: {data.user.phone} </strong>
+                            <strong>Phone: {data.phone}</strong>
                         </p>
                     </div>
                 </div>
@@ -39,30 +42,31 @@ const userProfile = () => {
                     <section>
                         <h3>About me</h3>
                         <p>
-                            {data.user.aboutMe}
+                            {data.aboutMe}
                         </p>
                     </section>
                     <div>
                         <section>
                             <h3>Experience</h3>
-                            {experience}
+                            {experience()}
                         </section>
                         <section>
                             <h3>Education</h3>
-                            {education}
+                            {education()}
                         </section>
                     </div>
                     <section>
-                        {cv}
+                        {cv()}
                     </section>
                 </div>
+
                 <div className='buttContainerProfile'>
-                    <Btn title="Editar" to={`/app/userEditProfile/${id}`} />
+                    <Btn title="Editar" to={`/app/userEditProfile/${data.id}`} />
                     <button className='btnNoCountry'>Eliminar</button>
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default userProfile
+export default UserProfile;

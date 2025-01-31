@@ -1,21 +1,21 @@
-import { createAsyncThunk } from "@reduxjs/toolkit"
+import { createAsyncThunk, createAction } from "@reduxjs/toolkit"
 import axios from "axios";
 
 const BASE_URL = 'https://back-end-latest-ggv4.onrender.com';
 
 export const userLogin = createAsyncThunk('userLogin', async (obj) => {
     try {
-        const { data } = await axios.post(`${BASE_URL}/auth/login`, obj.data)
-        console.log( "devuelve esto", data)
+        const { data } = await axios.post(`https://back-end-latest-ggv4.onrender.com/auth/login`, obj.data)
 
-        localStorage.setItem('token', data.token) // solo tomo el atributo dentro el unico objeto
-        localStorage.setItem('user', data.response.name)
+        localStorage.setItem('token', data.token)
+        localStorage.setItem('user', JSON.stringify(data.loginUserResponses[0]))
 
         
         return {
-            user: data.name,
+            user: data.loginUserResponses[0],
             token: data.token
         }
+        
         
     } catch (error) {
         
@@ -52,7 +52,8 @@ export const userLogout = createAsyncThunk('userLogout', async () => {
 
 export const userRegister = createAsyncThunk('userRegister', async (obj) => {
     try {
-        const { data } = await axios.post(`${BASE_URL}/auth/register`, obj)
+        const { data } = await axios.post(`https://back-end-latest-ggv4.onrender.com/auth/register`, obj)
+
 
         console.log(data)
         return {
@@ -96,3 +97,11 @@ export const userDelete = createAsyncThunk('userDelete', async (obj) => {
         };
     }
 });
+
+export const userPersistence = createAction("userPersistence", (obj) => {
+    return{
+        payload:{
+            user:obj
+        }
+    }
+})
