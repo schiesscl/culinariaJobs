@@ -1,23 +1,33 @@
-import HeaderScript from "./HeaderScript";
+import useHeaderScript from "./HeaderScript";
 import "./HeaderStyle.css";
 
 const Header = () => {
-    const { showMenu, ShowMenu } = HeaderScript();
+    const { ShowMenu, tipeMenu, isMenuOpen, UserActive } = useHeaderScript();
+
+    console.log(isMenuOpen)
 
     return (
-        <header className="headerContainer">
-            <figure>
-                CulinariJobs
-            </figure>
-            <nav>
-                <div onClick={ShowMenu}>
-                    <h1>Menu</h1>
+        <>
+            <header onClick={ShowMenu} className={isMenuOpen ? "headerContainer_open" : "headerContainer"}>
+                <figure className="logoContainer">
+                    <img src="/Logo.svg" alt="Logo" />
+                </figure>
+                <div className="userBox">
+                    <div className="containerUserName">
+                        <h4 className="userName">
+                            {UserActive.name + " " + UserActive.lastName}
+                        </h4>
+                        <p className="userDes">
+                            {UserActive.profession[0]}
+                        </p>
+                    </div>
+                    <figure>
+                        <img className="userPhoto" src={UserActive.photo} alt="" />
+                    </figure>
                 </div>
-                {
-                    showMenu
-                }
-            </nav>
-        </header>
+            </header>
+            {tipeMenu}
+        </>
     );
 }
 

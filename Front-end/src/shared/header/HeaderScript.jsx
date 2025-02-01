@@ -1,45 +1,29 @@
 import { useSelector } from "react-redux";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { userLogout } from "../../store/action/userAction";
+import NavBar from "../nav/NavBar";
 
-import Btn from "../../props/button/Btn";
+const useHeaderScript = () => {
+    const [tipeMenu, setTipeMenu] = useState(null);
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-const HeaderScript = () => {
-
-    const userActive = useSelector(store => store.userReducer.user);
-
-    const dispatch = useDispatch()
-
-    const handleSignOut = () =>
-    {
-        dispatch(userLogout())
-        setTimeout(() => {
-            window.location.reload()
-        }, 1)
-    }
-
-
-    const [showMenu, setShowMenu] = useState(null)
+    const UserActive = useSelector(store => store.userReducer.user)
 
     const ShowMenu = () => {
-        setShowMenu(
-            <div>
-                <Btn title="Home" to="/app/userHome" />
-                <Btn title="Perfil" to={`/app/userProfile/${userActive.id}`} />
-                {
-                userActive.rol === "admin" ? 
-                <Btn title="Dasboard" to="/app/dashboard" /> : null
-                }
-                <button onClick={handleSignOut}>Salir</button>
-            </div>
-        )
-    }
+        if (isMenuOpen) {
+            setTipeMenu(null);
+        } else {
+            setTipeMenu(<NavBar userActive={UserActive} />);
+        }
+        setIsMenuOpen(!isMenuOpen);
+    };
 
-    return {
+
+    return { 
         ShowMenu,
-        showMenu
+        tipeMenu,
+        isMenuOpen,
+        UserActive
     };
 }
 
-export default HeaderScript;
+export default useHeaderScript;

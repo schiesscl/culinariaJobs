@@ -17,18 +17,6 @@ import Dashboard from '../pages/Dashboard/Dashboard';
 
 import ProtectedRoute from './ProtectedRoute';
 
-/*
-Testeo1@gmail.com
-Testeo123
-*/
-
-/*
-ultimo
-teste
-Utesteo@gmail.com
-final123
-*/
-
 const router = createBrowserRouter([
     {
         path: "/",

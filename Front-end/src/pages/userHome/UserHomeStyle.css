@@ -1,4 +1,34 @@
 .user-home-container
 {
     height: 100vh;
+    padding: 2% 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.user-home-top
+{
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+
+
+.title-section
+{
+    padding: 0.5% 0%;
+    padding-left: 1%;
+    width: 20%;
+    border-radius: 0px 15px 0px 0px;
+    background-color: red;
+}
+
+.list-works
+{
+    background-color: blue;
 }
