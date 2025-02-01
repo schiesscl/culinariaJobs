@@ -1,8 +1,67 @@
-.headerContainer
-{
+.headerContainer {
     background-color: gray;
-    border-radius: 0px 0px 15px 15px;
+    border-radius: 0 0 15px 15px;
     padding: 1.5% 1%;
     width: 80%;
     margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.headerContainer_open {
+    background-color: gray;
+    border-radius: 0 0 15px 15px;
+    padding: 1.5% 1%;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 0;
+    align-items: center;
+}
+
+.headerContainer:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.589);
+}
+
+.logoContainer img {
+    height: 100px;
+}
+
+.userBox
+{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.userPhoto
+{
+    border-radius: 15px;
+    width: 100px;
+    height: 100px;
+    image-rendering: crisp-edges;
+    object-fit: cover;
+}
+
+.containerUserName
+{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.userName
+{
+    font-size: 2rem;
+
+}
+
+.userDes
+{
+    font-size: 1.5rem;
 }

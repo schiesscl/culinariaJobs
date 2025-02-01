@@ -1,0 +1,32 @@
+.container-user
+{
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 2%;
+    height: 17rem;
+    width: 15rem;
+    border-radius: 15px;
+}
+
+
+
+.container-user-photo
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10% 0%;
+}
+
+.user-photo
+{
+    border-radius: 15px;
+    width: 130px;
+    height: 130px;
+    image-rendering: crisp-edges;
+    object-fit: cover;
+}
