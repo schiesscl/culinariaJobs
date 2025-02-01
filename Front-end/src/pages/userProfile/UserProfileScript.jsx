@@ -38,7 +38,7 @@ const UserProfileScript = () => {
                 </p>
             )
         } else {
-            return data.user.education.map((edu) => (
+            return data.education.map((edu) => (
                 <p key={edu.degree}>
                     {edu.degree} - {edu.school} - {edu.date}
                 </p>

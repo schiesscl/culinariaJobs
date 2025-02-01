@@ -17,8 +17,6 @@ import Dashboard from '../pages/Dashboard/Dashboard';
 
 import ProtectedRoute from './ProtectedRoute';
 
-
-
 const router = createBrowserRouter([
     {
         path: "/",
