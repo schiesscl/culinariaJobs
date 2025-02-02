@@ -1,18 +1,18 @@
 import Btn from '../../props/button/Btn'
-
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './NavBarStyle.css'
 
 const NavBar = ({userActive}) => {
 
     return (
-        <nav className="NavBarContainer">
-            <div className='navMenu'>
-                <Btn title="Inicio" style={"btn_menu"} to="/app/userHome" />
-                <Btn title="Perfil" style={"btn_menu"} to={`/app/userProfile/${userActive.id}`} />
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <div className="container-fluid">
+                <Btn title="Inicio" style="nav-link" to="/app/userHome" />
+                <Btn title="Perfil" style="nav-link" to={`/app/userProfile/${userActive.id}`} />
                 {
-                    userActive.rol == 'admin' ? <Btn title="Dashboard" style={"btn_menu"} to="/app/dashboard" /> : null
+                    userActive.rol == 'admin' ? <Btn title="Dashboard" style="nav-link" to="/app/dashboard" /> : null
                 }
-                <Btn title="Salir" style={"btn_menu"} to="/" />
+                <Btn title="Salir" style="nav-link" to="/" />
             </div>
         </nav>
     )
