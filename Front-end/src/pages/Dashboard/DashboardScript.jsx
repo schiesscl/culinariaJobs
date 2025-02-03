@@ -32,8 +32,17 @@ const DashboardScript = () => {
                 <label htmlFor="">Trabajo
                     <input type="text" name="" id="" />
                 </label>
+                <label htmlFor="">Categoria
+                    <input type="text" name="" id="" />
+                </label>
                 <label htmlFor="">Salario
                     <input type="number" name="" id="" />
+                </label>
+                <label htmlFor="">Lugar
+                    <input type="text" name="" id="" />
+                </label>
+                <label htmlFor="">Turno
+                    <input type="text" name="" id="" />
                 </label>
                 <button>Crear trabajo</button>
             </form>

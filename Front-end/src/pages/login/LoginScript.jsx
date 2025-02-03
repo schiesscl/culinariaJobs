@@ -32,7 +32,6 @@ const LoginScript = () =>
         } catch (error) {
             console.log('Error en la acción userLogin:', error);
         }
-        console.log(testo)
     }
 
     return {

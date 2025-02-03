@@ -1,32 +1,58 @@
-import { useDispatch, useSelector } from "react-redux"
-import { useEffect } from "react"
-import { useParams } from "react-router-dom"
-import { getUserById } from "../../store/action/adminAction"
+import Btn from '../../props/button/Btn';
 
+import './UserReviewStyle.css'
+
+import UserReviewScript from './UserReviewScript';
 
 const UserReview = () => {
 
-    const { id } = useParams()
-    const distpach = useDispatch();
+    const { data, professions, DeleteUser } = UserReviewScript();
 
-    useEffect(() => {
-        distpach(getUserById(id))
-    }, [distpach,id])
+    if (!data) {
+        return (
+            <h1>Cargando</h1>
+        );
+    }
 
-    const userView = useSelector(store => store.adminReducer.users)
+    return (
+        <div className="user-profile-container">
+            <div className='user-profile-card'>
 
-    console.log("usuario traido por id: ",userView)
+                <div className='user-profile-user-data'>
+                    <h2>
+                        {data.name + " " + data.last_name}
+                    </h2>
+                    <figure>
+                        <img className='user-photo-card' src={data.photo} alt="foto de usuario" />
+                    </figure>
+                    <h3>
+                        {professions()}
+                    </h3>
+                    <div>
+                        <p>
+                            <strong>Email: {data.email}</strong>
+                        </p>
+                        <p>
+                            <strong>Phone: {data.phone}</strong>
+                        </p>
+                    </div>
+                </div>
 
-    return(
-        <>
-        <h1>
-            estoy en la id: {id}
-        </h1>
-        <button>
-            eliminar
-        </button>
-        </>
-    )
+                <div className='user-profile-user-desc'>
+                    <section>
+                        <h3>About me</h3>
+                        <p>
+                            {data.aboutMe}
+                        </p>
+                    </section>
+                </div>
+
+                <div className='buttContainerProfile'>
+                    <button onClick={DeleteUser} className='btnNoCountry'>Eliminar</button>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default UserReview;
