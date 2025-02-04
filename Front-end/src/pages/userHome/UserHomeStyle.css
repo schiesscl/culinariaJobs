@@ -1,5 +1,4 @@
-.user-home-container
-{
+.user-home-container {
     height: 100vh;
     padding: 2% 10%;
     display: flex;
@@ -7,8 +6,7 @@
     gap: 20px;
 }
 
-.user-home-top
-{
+.user-home-top {
     padding: 2%;
     display: flex;
     flex-direction: column;
@@ -17,10 +15,16 @@
     gap: 15px;
 }
 
+.work-category-section {
+    flex: 1;
+    overflow-y: auto;
+    padding: 2%;
+    background-color: #f8f9fa; /* Color de fondo claro */
+    border: 1px solid #dee2e6; /* Borde gris claro */
+    border-radius: 0.25rem; /* Bordes redondeados */
+}
 
-
-.title-section
-{
+.title-section {
     padding: 0.5% 0%;
     padding-left: 1%;
     width: 20%;
@@ -28,7 +32,6 @@
     background-color: red;
 }
 
-.list-works
-{
+.list-works {
     background-color: blue;
 }

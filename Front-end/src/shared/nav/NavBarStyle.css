@@ -1,16 +1,18 @@
-.NavBarContainer {
-    background-color: rgba(128, 128, 128, 0.822);
-    border-radius: 0px 0px 15px 15px;
-    padding: 1.5% 1%;
-    width: 80%;
-    margin: auto;
-}
-
-.navMenu
-{
+.navbar-nav {
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
+    width: 100%;
+}
+
+.nav-link {
+    text-align: center;
+    flex: 1;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #808080;
+    color: white;
 }
 

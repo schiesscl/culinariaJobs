@@ -6,7 +6,7 @@ const inicialStateUser = {
     user: {
         id: 1,
         name: "Fil",
-        lastName: "Gonzalez",
+        last_name: "Gonzalez",
         photo: "https://d1zzxdyvtq79bu.cloudfront.net/context/frontend/landing/header_hero_masonry/chef/chef-10.jpg",
         email: "RomanGonzales@hotmail.com",
         phone: "1234567890",

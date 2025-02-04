@@ -1,7 +1,5 @@
 import Btn from '../../props/button/Btn';
-
 import './UserProfileStyle.css'
-
 import UserProfileScript from './UserProfileScript'
 
 const UserProfile = () => {
