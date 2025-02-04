@@ -46,7 +46,6 @@
     border-radius: 15px;
     width: 100px;
     height: 100px;
-    image-rendering: crisp-edges;
     object-fit: cover;
 }
 

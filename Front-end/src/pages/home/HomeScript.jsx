@@ -16,4 +16,18 @@ const HomeScript = () => {
 
 
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setHomeText(textHome[Math.floor(Math.random() * textHome.length)]);
+        }, 3000);
+        return () => clearInterval(interval);
+    }, []);
+
+    return (
+        <div>
+            <h1>{homeText}</h1>
+        </div>
+    );
 }
+
+export default HomeScript;

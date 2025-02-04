@@ -2,6 +2,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { getJobs } from "../../store/action/jobsAction";
 import { useEffect, useState } from "react";
 import Btn from "../button/Btn";
+import { Row, Col, Card, CardBody, CardTitle, CardText, FormGroup, Label, Input } from "reactstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './WorkByCategory.css';
 
 const WorkByCategory = () => {
     const dispatch = useDispatch();
@@ -26,67 +29,41 @@ const WorkByCategory = () => {
 
     return (
         <>
-            <div>
-                <label>
-                    <input
-                        type="checkbox"
-                        value="Cocina"
-                        checked={selectedCategories.includes("Cocina")}
-                        onChange={() => handleCheckboxChange("Cocina")}
-                    />
-                    Cocina
-                </label>
-                <label>
-                    <input
-                        type="checkbox"
-                        value="Servicio"
-                        checked={selectedCategories.includes("Servicio")}
-                        onChange={() => handleCheckboxChange("Servicio")}
-                    />
-                    Servicio
-                </label>
-                <label>
-                    <input
-                        type="checkbox"
-                        value="Bebidas"
-                        checked={selectedCategories.includes("Bebidas")}
-                        onChange={() => handleCheckboxChange("Bebidas")}
-                    />
-                    Bebidas
-                </label>
-                <label>
-                    <input
-                        type="checkbox"
-                        value="Repostería"
-                        checked={selectedCategories.includes("Repostería")}
-                        onChange={() => handleCheckboxChange("Repostería")}
-                    />
-                    Repostería
-                </label>
-                <label>
-                    <input
-                        type="checkbox"
-                        value="Administración"
-                        checked={selectedCategories.includes("Administración")}
-                        onChange={() => handleCheckboxChange("Administración")}
-                    />
-                    Administración
-                </label>
+            <div className="category-filters">
+                {['Cocina', 'Servicio', 'Bebidas', 'Repostería', 'Administración'].map(category => (
+                    <FormGroup check inline key={category}>
+                        <Label check>
+                            <Input
+                                type="checkbox"
+                                value={category}
+                                checked={selectedCategories.includes(category)}
+                                onChange={() => handleCheckboxChange(category)}
+                            />
+                            {category}
+                        </Label>
+                    </FormGroup>
+                ))}
             </div>
 
             {filteredWorks && filteredWorks.length > 0 ? (
-                <div>
+                <Row className="work-list">
                     {filteredWorks.map(work => (
-                        <div key={work.id}>
-                            <div>Categoría: {work.category}</div>
-                            <div>Título: {work.title}</div>
-                            <div>Salario: {work.salario}</div>
-                            <div>Restaurante: {work.restaurante}</div>
-                            <div>Turno: {work.turno}</div>
-                            <Btn title="más info" to={`/app/workDetail/${work.id}`} />
-                        </div>
+                        <Col sm="6" md="4" lg="3" key={work.id} className="mb-4">
+                            <Card>
+                                <CardBody>
+                                    <CardTitle tag="h5">{work.title}</CardTitle>
+                                    <CardText>
+                                        <div>Categoría: {work.category}</div>
+                                        <div>Salario: {work.salario}</div>
+                                        <div>Restaurante: {work.restaurante}</div>
+                                        <div>Turno: {work.turno}</div>
+                                    </CardText>
+                                    <Btn title="más info" to={`/app/workDetail/${work.id}`} />
+                                </CardBody>
+                            </Card>
+                        </Col>
                     ))}
-                </div>
+                </Row>
             ) : (
                 <div>No hay trabajos disponibles en estas categorías.</div>
             )}

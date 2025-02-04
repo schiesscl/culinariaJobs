@@ -3,7 +3,7 @@ import "./HeaderStyle.css";
 import NavBar from '../nav/NavBar';
 
 const Header = () => {
-    const { ShowMenu, tipeMenu, isMenuOpen, UserActive } = useHeaderScript();
+    const { ShowMenu, isMenuOpen, UserActive } = useHeaderScript();
 
     return (
         <>
@@ -27,8 +27,7 @@ const Header = () => {
                     </div>
                 </div>
             </header>
-            <NavBar userActive={UserActive} isMenuOpen={isMenuOpen} />
-            {tipeMenu}
+            {isMenuOpen && <NavBar userActive={UserActive} />}
         </>
     );
 }
