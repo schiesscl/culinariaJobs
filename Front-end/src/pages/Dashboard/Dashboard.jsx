@@ -1,6 +1,6 @@
 import DashboardScript from "./DashboardScript";
-
 import './DashboardStyle.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Dashboard = () => {
     const { jobs, users, renderList, RenderUsersList, RenderWorksList, RenderCreateWorks } = DashboardScript();

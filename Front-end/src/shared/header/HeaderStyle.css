@@ -1,6 +1,6 @@
 .headerContainer {
     background-color: gray;
-    padding: 1.5% 1%;
+    padding: 1% 1%; /* Reducir padding */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -20,7 +20,7 @@
 
 .headerContainer_open {
     background-color: gray;
-    padding: 1.5% 1%;
+    padding: 1% 1%; /* Reducir padding */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -33,7 +33,7 @@
 }
 
 .logoContainer img {
-    height: 100px;
+    height: 80px; /* Reducir altura de la imagen */
 }
 
 .userBox {
@@ -44,8 +44,8 @@
 
 .userPhoto {
     border-radius: 15px;
-    width: 100px;
-    height: 100px;
+    width: 80px; /* Reducir tamaño de la foto */
+    height: 80px; /* Reducir tamaño de la foto */
     object-fit: cover;
 }
 
