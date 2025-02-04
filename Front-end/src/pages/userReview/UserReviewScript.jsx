@@ -7,7 +7,7 @@ const UserReviewScript = () => {
 
     const data = useSelector(store => store.adminReducer.users);
 
-    const { id } = useParams
+    const { id } = useParams()
 
     const dispatch = useDispatch()
 
@@ -19,11 +19,11 @@ const UserReviewScript = () => {
         }
     }
     
-    /*
+    
     useEffect(() => {
         dispatch(getUserById(id))
     },[dispatch, id])
-    */
+    
 
 
     const DeleteUser = () => {
