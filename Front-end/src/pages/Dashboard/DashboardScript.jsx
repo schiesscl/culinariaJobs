@@ -28,14 +28,16 @@ const DashboardScript = () => {
 
     const RenderCreateWorks = () => {
         setRenderList(
-            <form>
-                <label htmlFor="">Trabajo
-                    <input type="text" name="" id="" />
-                </label>
-                <label htmlFor="">Salario
-                    <input type="number" name="" id="" />
-                </label>
-                <button>Crear trabajo</button>
+            <form className="container mt-4">
+                <div className="mb-3">
+                    <label htmlFor="jobTitle" className="form-label">Trabajo</label>
+                    <input type="text" className="form-control" id="jobTitle" />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="jobSalary" className="form-label">Salario</label>
+                    <input type="number" className="form-control" id="jobSalary" />
+                </div>
+                <button type="submit" className="btn btn-dark">Crear trabajo</button>
             </form>
         )
     }
