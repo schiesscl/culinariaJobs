@@ -35,11 +35,14 @@ export const getUserById = createAsyncThunk("getUserById", async (obj) =>
     {
         //const response = await axios.get(`${BASE_URL}/${obj}`)
         return{
-            users: {id:4,name:"Paco",lastName:"Perez",photo:"", email:"",phone:"",profession:[],experience:[{}],education:[{}],skills:[],aboutMe:"",cv:"",rol:"user"}
+            users: {id:4,name:"Paco",last_name:"Perez",photo:"", email:"",phone:"",profession:[],experience:[{}],education:[{}],skills:[],aboutMe:"",cv:"",rol:"user"}
         }
     }
     catch(error)
     {
         console.log("error al traer usario por id" + error)
+        return{
+            users: null
+        }
     }
 })
