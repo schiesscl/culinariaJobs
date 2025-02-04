@@ -93,7 +93,7 @@ const Home = () => {
             next={next}
             previous={previous}
             fade={true}
-            slide={false} // Desactiva el deslizamiento
+            slide={false} // Desactiva el deslizamiento-
           >
             <CarouselIndicators
               items={items}
@@ -117,9 +117,6 @@ const Home = () => {
           <Button variant="dark" href="/login">Ingresar</Button>
           <Button variant="dark" href="/register">Registrarse</Button>
         </div>
-      </div>
-      <div className="footerContainer">
-        <Footer />
       </div>
     </div>
   );

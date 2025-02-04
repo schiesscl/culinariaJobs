@@ -82,9 +82,9 @@ export const userEdit = createAsyncThunk('userEdit', async (obj) => {
     }
 })
 
-export const userDelete = createAsyncThunk('userDelete', async (obj) => {
+export const userDelete = createAsyncThunk('userDelete', async (id) => {
     try {
-        await axios.delete(`${BASE_URL}/auth/delete`, { data: obj });
+        await axios.delete(`${BASE_URL}/auth/delete/${id}`);
         return {
             user: null,
             token: null,

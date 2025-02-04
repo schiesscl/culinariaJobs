@@ -1,9 +1,10 @@
-import { useSelector } from "react-redux"
+import { useSelector,useDispatch } from "react-redux"
+
 
 const UserProfileScript = () => {
     const data = useSelector(store => store.userReducer.user);
 
-    console.log(data)
+    const dispatch = useDispatch()
 
     const professions = () => {
         if (data.profession == null) {
@@ -62,6 +63,10 @@ const UserProfileScript = () => {
             );
         }
     };
+
+    const DeleteUser = () => {
+        dispatch(DeleteUser(data.id))
+    }
 
 
     return {
