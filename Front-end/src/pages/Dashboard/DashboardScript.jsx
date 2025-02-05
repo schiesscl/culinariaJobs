@@ -28,23 +28,30 @@ const DashboardScript = () => {
 
     const RenderCreateWorks = () => {
         setRenderList(
-            <form>
-                <label htmlFor="">Trabajo
-                    <input type="text" name="" id="" />
-                </label>
-                <label htmlFor="">Categoria
-                    <input type="text" name="" id="" />
-                </label>
-                <label htmlFor="">Salario
-                    <input type="number" name="" id="" />
-                </label>
-                <label htmlFor="">Lugar
-                    <input type="text" name="" id="" />
-                </label>
-                <label htmlFor="">Turno
-                    <input type="text" name="" id="" />
-                </label>
-                <button>Crear trabajo</button>
+            <form className="row g-3">
+                <div className="col-md-6">
+                    <label htmlFor="job" className="form-label">Trabajo</label>
+                    <input type="text" className="form-control" id="job" />
+                </div>
+                <div className="col-md-6">
+                    <label htmlFor="category" className="form-label">Categoria</label>
+                    <input type="text" className="form-control" id="category" />
+                </div>
+                <div className="col-md-6">
+                    <label htmlFor="salary" className="form-label">Salario</label>
+                    <input type="number" className="form-control" id="salary" />
+                </div>
+                <div className="col-md-6">
+                    <label htmlFor="location" className="form-label">Lugar</label>
+                    <input type="text" className="form-control" id="location" />
+                </div>
+                <div className="col-md-6">
+                    <label htmlFor="shift" className="form-label">Turno</label>
+                    <input type="text" className="form-control" id="shift" />
+                </div>
+                <div className="col-12">
+                    <button type="submit" className="btn create-work-button" style={{ backgroundColor: '#FFD700', color: '#FFFFFF', hover: { backgroundColor: '#b39700' } }}>Crear trabajo</button>
+                </div>
             </form>
         )
     }

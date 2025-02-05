@@ -1,5 +1,5 @@
 .headerContainer {
-    background-color: gray;
+    background-color: #4d9b4d;
     padding: 1% 1%; /* Reducir padding */
     width: 100%;
     display: flex;
@@ -19,7 +19,7 @@
 }
 
 .headerContainer_open {
-    background-color: gray;
+    background-color: #56AB56;
     padding: 1% 1%; /* Reducir padding */
     width: 100%;
     display: flex;
@@ -29,7 +29,7 @@
 
 .headerContainer:hover {
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.589);
+    background-color: #346834(0, 0, 0, 0.7);
 }
 
 .logoContainer img {
@@ -58,8 +58,10 @@
 
 .userName {
     font-size: 2rem;
+    color: white; /* Cambiar el color a blanco */
 }
 
 .userDes {
     font-size: 1.5rem;
+    color: white; /* Cambiar el color a blanco */
 }

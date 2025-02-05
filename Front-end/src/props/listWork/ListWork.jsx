@@ -15,14 +15,14 @@ const ListWork = ({ data }) => {
             <div className="card work-card">
                 <div className="card-body">
                     <h5 className="card-title">{item.title}</h5>
-                    <a href={`/app/workDetail/${item.id}`} className="btn btn-dark">Más info</a>
+                    <a href={`/app/workDetail/${item.id}`} className=" btn-custom">Más info</a>
                 </div>
             </div>
         </div>
     ));
 
     return (
-        <div className="container">
+        <div className="container ListWork-container">
             <div className="row">
                 {renderList}
             </div>

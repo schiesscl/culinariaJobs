@@ -14,6 +14,7 @@
     border: 1px solid #dee2e6;
     border-radius: 0.25rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #FFD700; /* Color de fondo */
 }
 
 .card-body {
@@ -28,4 +29,19 @@
 .card-text {
     font-size: 1rem;
     color: #6c757d;
+}
+
+.btn-more-info {
+    background-color: #FFD700; /* Color de fondo */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.btn-more-info:hover {
+    background-color: #e6c200;
 }
