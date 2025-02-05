@@ -31,7 +31,7 @@ const Login = () => {
           </div>
 
           <div className='buttContainer'>
-            <Btn style="btnNoCountry" title="Ingresar" onClick={handleLogin} />
+            <Btn style="" title="Ingresar" onClick={handleLogin} />
             <Btn title='Volver' to='/' />
           </div>
 

@@ -15,7 +15,7 @@ const ListUser = ({ data }) => {
                             <div className="card-body">
                                 <h5 className="card-title">{`${user.name} ${user.lastName}`}</h5>
                                 <p className="card-text">{user.profession.join(" - ")}</p>
-                                <a href={`/app/userProfile/${user.id}`} className="btn btn-dark">Ver perfil</a>
+                                <Btn title="Ver perfil" to={`/app/userReview/${user.id}`} style="btn btn-dark" />
                             </div>
                         </div>
                     </div>

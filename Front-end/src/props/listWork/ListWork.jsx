@@ -15,7 +15,7 @@ const ListWork = ({ data }) => {
             <div className="card work-card">
                 <div className="card-body">
                     <h5 className="card-title">{item.title}</h5>
-                    <a href={`/app/workDetail/${item.id}`} className=" btn-custom">Más info</a>
+                    <Btn title="Más info" to={`/app/workDetail/${item.id}`} style="btn-custom"  />
                 </div>
             </div>
         </div>

@@ -30,7 +30,7 @@ const WorkDetails = () => {
                     <p>Turno: {workView.turno}</p>
                 </div>
                 <div>
-                    {userActiveRol === "admin" ? (
+                    {userActiveRol === 2 ? (
                         <div>
                             <button>eliminar</button>
                             <Btn title="Editar" to={`/app/workEdit/${id}`} />
@@ -38,7 +38,7 @@ const WorkDetails = () => {
                     ) : null}
                 </div>
                 <div>
-                    {userActiveRol === "user" ? (
+                    {userActiveRol === 1 ? (
                         <button>postularse</button>
                     ) : null}
                 </div>

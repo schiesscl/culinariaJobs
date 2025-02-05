@@ -25,7 +25,7 @@ const Register = () => {
             </Form.Group>
             <Form.Group className='mb-3'>
               <Form.Label>Correo electrónico:</Form.Label>
-              <Form.Control onChange={handleInput} type="text" name='userName' placeholder='Correo electrónico' />
+              <Form.Control onChange={handleInput} type="text" name='email' placeholder='Correo electrónico' />
             </Form.Group>
             <Form.Group className='mb-3'>
               <Form.Label>Contraseña:</Form.Label>

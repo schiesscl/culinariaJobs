@@ -7,6 +7,8 @@ export const userLogin = createAsyncThunk('userLogin', async (obj) => {
     try {
         const { data } = await axios.post(`https://back-end-latest-ggv4.onrender.com/auth/login`, obj.data)
 
+        console.log(data)
+
         localStorage.setItem('token', data.token)
         localStorage.setItem('user', JSON.stringify(data.loginUserResponses[0]))
 
@@ -28,10 +30,10 @@ export const userLogin = createAsyncThunk('userLogin', async (obj) => {
 
 export const userLogout = createAsyncThunk('userLogout', async () => {
     try {
-        let token = localStorage.getItem('token')
-        let configs = { headers: { 'Authorization': `Bearer ${token}` } }
+        //let token = localStorage.getItem('token')
+        //let configs = { headers: { 'Authorization': `Bearer ${token}` } }
 
-        await axios.post(`${BASE_URL}/auth/logout`, null, configs);
+        //await axios.post(`${BASE_URL}/auth/logout`, null, configs);
 
         localStorage.removeItem('token');
         localStorage.removeItem('user');
@@ -99,7 +101,6 @@ export const userPersistence = createAction("userPersistence", (obj) => {
     return {
         payload: {
             user: obj,
-            user: obj.role = "user"
         }
     }
 })
