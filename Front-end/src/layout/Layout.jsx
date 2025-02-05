@@ -9,13 +9,13 @@ import './LayoutStyle.css';
 const Layout = () =>
 {
     return(
-        <>
+        <div className="content">
             <Header />
-            <div className="content">
+            <div>
                 <Outlet />
             </div>
             <Footer />
-        </>
+        </div>
     )
 }
 
