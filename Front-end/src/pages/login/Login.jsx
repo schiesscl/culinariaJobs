@@ -17,7 +17,7 @@ const Login = () => {
           <h1 className='formTitle'>
             Login
           </h1>
-        <form onSubmit={handleLogin} className='formSection'>
+        <form className='formSection'>
 
           <div className='laberContainer'>
             <label className='labelForm'>
@@ -31,7 +31,7 @@ const Login = () => {
           </div>
 
           <div className='buttContainer'>
-            <button className='btnNoCountry'>Ingresar</button>
+            <Btn style="btnNoCountry" title="Ingresar" onClick={handleLogin} />
             <Btn title='Volver' to='/' />
           </div>
 

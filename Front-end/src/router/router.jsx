@@ -21,9 +21,9 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: (
-            // <ProtectedRoute allowedRoles={"anyone"} path={"/app/userHome"}>
+            <ProtectedRoute allowedRoles={"anyone"} path={"/app/userHome"}>
                 <Home />
-            // </ProtectedRoute>
+            </ProtectedRoute>
         )
     },
     {

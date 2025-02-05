@@ -11,6 +11,7 @@
     border-radius: 15px;
     color: #292929;
     transition: 1s;
+    color: white;
 }
 
 .btn_menu:hover

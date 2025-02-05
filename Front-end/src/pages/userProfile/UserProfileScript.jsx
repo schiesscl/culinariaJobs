@@ -18,7 +18,7 @@ const UserProfileScript = () => {
     const experience = () => {
         if (data.experience == null) {
             return (
-                <p key="sin_experiencia">
+                <p key="Sin experiencia">
                     Sin experiencia
                 </p>
             );
@@ -74,7 +74,8 @@ const UserProfileScript = () => {
         professions,
         experience,
         education,
-        cv
+        cv,
+        DeleteUser
     };
 }
 

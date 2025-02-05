@@ -5,6 +5,8 @@ import NavBar from '../nav/NavBar';
 const Header = () => {
     const { ShowMenu, isMenuOpen, UserActive } = useHeaderScript();
 
+    console.log(UserActive)
+
     return (
         <>
             <header onClick={ShowMenu} className={isMenuOpen ? "headerContainer_open" : "headerContainer"}>
@@ -15,7 +17,7 @@ const Header = () => {
                     <div className="userBox">
                         <div className="containerUserName">
                             <h4 className="userName">
-                                {UserActive.name + " " + UserActive.lastName}
+                                {UserActive.name + " " + UserActive.last_name}
                             </h4>
                             <p className="userDes">
                                 {UserActive.profession[0]}
