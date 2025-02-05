@@ -2,14 +2,18 @@ import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const ProtectedRoute = ({ children, allowedRoles, path }) => {
-    
     const userActive = useSelector(store => store.userReducer.user);
 
-    if (allowedRoles.includes("anyone") && userActive == null) {
-        console.log("usuario: ", userActive)
+    if (!allowedRoles || !path) {
+        console.error("Los roles permitidos o la ruta de redirección no están definidos.");
+        return <Navigate to="/" />;
+    }
+
+    if (allowedRoles.includes("anyone") && !userActive) {
         return children;
-    } else if (userActive && allowedRoles.includes(userActive.rol)) {
-        console.log("usuario: ", userActive)
+    }
+
+    if (userActive && userActive.role && allowedRoles.includes(userActive.role.id)) {
         return children;
     }
 

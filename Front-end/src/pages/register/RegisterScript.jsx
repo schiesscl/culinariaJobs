@@ -14,7 +14,7 @@ const RegisterScript = () =>
     const [registerData, setRegisterData] = useState({
         name: '',
         last_name: '',
-        userName: '',
+        email: '',
         password: '',
     })
 
@@ -29,6 +29,8 @@ const RegisterScript = () =>
 
     const handleRegister = async (event) => {
         event.preventDefault();
+
+        console.log(registerData)
 
         try {
             dispatch(userRegister(registerData));

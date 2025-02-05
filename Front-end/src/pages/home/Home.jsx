@@ -1,7 +1,7 @@
 import './HomeStyle.css';
 import Button from 'react-bootstrap/Button';
 import Footer from '../../shared/footer/Footer';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   Carousel,
   CarouselItem,
@@ -37,6 +37,7 @@ const items = [
 const Home = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
+  const carouselRef = useRef(null);
 
   const next = () => {
     if (animating) return;
@@ -63,6 +64,7 @@ const Home = () => {
         key={item.key}
         onExiting={() => setAnimating(true)}
         onExited={() => setAnimating(false)}
+        ref={carouselRef}
       >
         <img src={item.src} alt={item.altText} className="d-block w-100" />
         <CarouselCaption
@@ -81,19 +83,19 @@ const Home = () => {
       </figure>
       <div className="d-flex flex-column justify-content-center align-items-center flex-grow-1">
         <div className="carouselContainer">
-        <style>
-        {`.custom-tag {
+          <style>
+            {`.custom-tag {
               max-width: 100%;
               height: 500px;
               background: black;
             }`}
-        </style>
+          </style>
           <Carousel
             activeIndex={activeIndex}
             next={next}
             previous={previous}
             fade={true}
-            slide={false} // Desactiva el deslizamiento-
+            slide={false}
           >
             <CarouselIndicators
               items={items}

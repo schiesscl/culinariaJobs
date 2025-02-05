@@ -10,7 +10,7 @@ const WorkDetailsScript = () => {
     const dispatch = useDispatch()
     const { id } = useParams()
     const workView = useSelector(store => store.jobsReducer.jobs)
-    const userActiveRol = useSelector(store => store.userReducer.user.rol)
+    const userActiveRol = useSelector(store => store.userReducer.user.role.id)
 
     
     useEffect(() => {
