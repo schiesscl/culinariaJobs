@@ -7,24 +7,23 @@
 }
 
 .Dashboard-container-menu {
-    height: 80%;
     width: 20%;
+    height: 50dvh;
     border-radius: 15px;
     padding: 5% 2%;
     background-color: #56AB56;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     gap: 30px;
-    position: sticky;
-    top: 10%;
     align-self: center;
 }
 
 .Dashboard-but-menu {
     display: flex;
+    height: 100%;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     width: 100%;
     gap: 15px;
 }
@@ -34,7 +33,7 @@
     border-radius: 0px 15px 15px 0px;
     font-size: 1.5rem;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    background-color: #FFD700; /* Color de fondo */
+    background-color: #78bc78;
     border: none; /* Quitar borde */
 }
 
@@ -46,6 +45,7 @@
 
 .Dashboard-Vew {
     display: flex;
+    height: 100%;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center; /* Centrar verticalmente */

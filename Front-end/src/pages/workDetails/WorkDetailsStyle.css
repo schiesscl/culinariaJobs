@@ -1,0 +1,26 @@
+.container-workDetails
+{
+    padding: 0% 20%;
+    height: 80dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-workDetails
+{
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    border-radius: 15px;
+}
+
+.contaner-button-work
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}

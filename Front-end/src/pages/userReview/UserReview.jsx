@@ -14,8 +14,10 @@ const UserReview = () => {
         );
     }
 
+    console.log(data)
+
     return (
-        <div className="user-profile-container">
+        <div className="user-profileR-container">
             <div className='user-profile-card'>
 
                 <div className='user-profile-user-data'>
@@ -48,7 +50,7 @@ const UserReview = () => {
                 </div>
 
                 <div className='buttContainerProfile'>
-                    <button onClick={DeleteUser} className='btnNoCountry'>Eliminar</button>
+                    <button onClick={DeleteUser} className='btn btn-danger'>Eliminar</button>
                 </div>
             </div>
         </div>

@@ -14,7 +14,7 @@ const NavBar = ({userActive}) => {
     }
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
                 <Btn title="Inicio" style="nav-link" to="/app/userHome" />
                 <Btn title="Perfil" style="nav-link" to={`/app/userProfile/${userActive.id}`} />
