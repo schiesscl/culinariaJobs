@@ -2,7 +2,7 @@
 import { RouterProvider } from 'react-router-dom'
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { userPersistence } from './store/action/userAction';
+import { userLogout, userPersistence } from './store/action/userAction';
 
 // importacion de logicas
 import router from './router/router';
@@ -17,11 +17,15 @@ function App() {
   useEffect(() =>{
     let token = localStorage.getItem('token')
     let user = localStorage.getItem("user")
+
     if(token)
     {
       dispatch(userPersistence(JSON.parse(user)))
+      console.log(JSON.parse(user))
     }
-  })
+  }, [])
+
+ 
 
   return (
     <>

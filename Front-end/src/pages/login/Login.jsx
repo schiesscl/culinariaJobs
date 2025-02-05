@@ -1,37 +1,43 @@
-import { Link } from 'react-router-dom';
-import { Container, Card, Form, Button } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Btn from '../../props/button/Btn';
 
-import './LoginStyle.css';
+import './LoginStyle.css'
 import LoginScript from './LoginScript';
 
 const Login = () => {
+
+    /*
+    Testiado - funciona perfecto
+    */
+
   const { handleInput, handleLogin } = LoginScript();
 
   return (
-    <Container className='d-flex align-items-center justify-content-center' style={{ height: '100vh' }}>
-      <Card style={{ maxWidth: '500px', width: '100%' }}>
-        <Card.Body>
-          <h1 className='text-center'>Login</h1>
-          <Form onSubmit={handleLogin}>
-            <Form.Group className='mb-3'>
-              <Form.Label>Correo electronico:</Form.Label>
-              <Form.Control onChange={handleInput} name='email' type="text" placeholder='Correo electronico' />
-            </Form.Group>
-            <Form.Group className='mb-3'>
-              <Form.Label>Contraseña:</Form.Label>
-              <Form.Control onChange={handleInput} name='password' type="password" placeholder='Contraseña' />
-            </Form.Group>
-            <div className='d-flex justify-content-between'>
-              <Button type='submit' className='btn-ingresar'>Ingresar</Button>
-              <Link to='/'>
-                <Button variant='outline-success' className='btn-volver'>Volver</Button>
-              </Link>
-            </div>
-          </Form>
-        </Card.Body>
-      </Card>
-    </Container>
+    <div className='formContainer'>
+      <div className='formCard'>
+          <h1 className='formTitle'>
+            Login
+          </h1>
+        <form className='formSection'>
+
+          <div className='laberContainer'>
+            <label className='labelForm'>
+              Correo electronico:
+              <input className='inputForm' onChange={handleInput} name='email' type="text" placeholder='Correo electronico' />
+            </label>
+            <label className='labelForm'>
+              Contraseña:
+              <input className='inputForm' onChange={handleInput} name='password' type="password" placeholder='Contraseña' />
+            </label>
+          </div>
+
+          <div className='buttContainer'>
+            <Btn style="btnNoCountry" title="Ingresar" onClick={handleLogin} />
+            <Btn title='Volver' to='/' />
+          </div>
+
+        </form>
+      </div>
+    </div>
   );
 }
 

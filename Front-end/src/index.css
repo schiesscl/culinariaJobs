@@ -86,8 +86,6 @@ body {
 
 .btnNoCountry 
 {
-    background-color: #f1f1f1;
-    color: #333;
     padding: 1rem 5%;
     border: 1px solid #333;
     border-radius: 15px;
@@ -103,7 +101,4 @@ body {
 .btnNoCountry:hover 
 {
     background-color: #333;
-    color: #f1f1f1;
 }
-
-

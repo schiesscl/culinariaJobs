@@ -10,15 +10,14 @@ export const userLogin = createAsyncThunk('userLogin', async (obj) => {
         localStorage.setItem('token', data.token)
         localStorage.setItem('user', JSON.stringify(data.loginUserResponses[0]))
 
-        
         return {
             user: data.loginUserResponses[0],
             token: data.token
         }
-        
-        
+
+
     } catch (error) {
-        
+
         console.error('Error logging in:', error);
         return {
             user: null,
@@ -43,7 +42,7 @@ export const userLogout = createAsyncThunk('userLogout', async () => {
         }
     } catch (error) {
         console.error('Error logging out:', error);
-        return{
+        return {
             user: null,
             token: null,
         }
@@ -53,7 +52,6 @@ export const userLogout = createAsyncThunk('userLogout', async () => {
 export const userRegister = createAsyncThunk('userRegister', async (obj) => {
     try {
         const { data } = await axios.post(`https://back-end-latest-ggv4.onrender.com/auth/register`, obj)
-
 
         console.log(data)
         return {
@@ -68,13 +66,12 @@ export const userRegister = createAsyncThunk('userRegister', async (obj) => {
 })
 
 export const userEdit = createAsyncThunk('userEdit', async (obj) => {
-    try{
+    try {
         const { data } = await axios.put(`${BASE_URL}/auth/edit`, obj)
-        return{
+        return {
             user: data.response.user
         }
-    } catch(error)
-    {
+    } catch (error) {
         console.error('Error editing user:', error);
         return {
             user: null
@@ -99,9 +96,10 @@ export const userDelete = createAsyncThunk('userDelete', async (id) => {
 });
 
 export const userPersistence = createAction("userPersistence", (obj) => {
-    return{
-        payload:{
-            user:obj
+    return {
+        payload: {
+            user: obj,
+            user: obj.role = "user"
         }
     }
 })
