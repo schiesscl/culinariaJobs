@@ -1,6 +1,8 @@
 import Btn from "../../props/button/Btn";
 import WorkDetailsScript from "./WorkDetailsScript";
 
+import "./WorkDetailsStyle.css"
+
 const WorkDetails = () => {
 
     const { workView, userActiveRol, id } = WorkDetailsScript()
@@ -8,14 +10,13 @@ const WorkDetails = () => {
     console.log(userActiveRol);
     console.log("estoy viendo el trabajo", workView);
 
-    if(!workView)
-    {
-        return(<h1>Cargando</h1>)
+    if (!workView) {
+        return (<h1>Cargando</h1>)
     }
 
     return (
-        <div>
-            <div>
+        <div className="container-workDetails">
+            <div className="card-workDetails">
                 <div>
                     <h1>
                         {workView.category}
@@ -31,9 +32,9 @@ const WorkDetails = () => {
                 </div>
                 <div>
                     {userActiveRol === 2 ? (
-                        <div>
-                            <button>eliminar</button>
-                            <Btn title="Editar" to={`/app/workEdit/${id}`} />
+                        <div className="contaner-button-work">
+                            <Btn title="Eliminar" style="btn btn-danger" to="/" />
+                            <Btn style="btn btn-success" title="Editar" to={`/app/workEdit/${id}`} />
                         </div>
                     ) : null}
                 </div>

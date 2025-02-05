@@ -9,6 +9,7 @@
     flex: 1;
     padding: 10px;
     transition: background-color 0.3s ease;
+    border-radius: 0px 0px 15px 15px;
 }
 
 .nav-link:hover {

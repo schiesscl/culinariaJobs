@@ -1,90 +1,56 @@
-.formContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f4f4f4;
-  }
-  
-  .formCard {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    width: 100%;
-  }
-  
-  .formTitle {
-    text-align: center;
-    font-size: 1.8em;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .formSection {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .laberContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .laberContainer label {
-    font-size: 1em;
-    color: #333;
-  }
-  
-  .inputForm {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1em;
-  }
-  
-  .inputForm:focus {
-    outline: none;
-    border-color: #007BFF;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-  }
-  
-  .experience, .education {
-    margin-bottom: 15px;
-  }
-  
-  .buttContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
-  .btnNoCountry {
-    background-color: #007BFF;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s;
-  }
-  
-  .btnNoCountry:hover {
-    background-color: #0056b3;
-  }
-  
-  .buttContainer a {
-    text-decoration: none;
-    color: #007BFF;
-    font-size: 1em;
-    transition: color 0.3s;
-  }
-  
-  .buttContainer a:hover {
-    color: #0056b3;
-  }
-  
+.cont-edit-perfile
+{
+  margin: 5% 20%;
+  padding: 5%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #F5F5F5;
+}
+
+.formTitle
+{
+  font-size: 3rem;
+}
+
+.formSection-EP
+{
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+
+}
+
+.laberContainer-EP
+{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 1.3rem;
+}
+
+.label-EP-inputs
+{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 15px;
+}
+
+.cont-checkbox
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.label-checkbox
+{
+  display: flex;
+  gap: 10px;
+}
+
+.buttContainer-EP
+{
+  margin-top: 3%;
+  display: flex;
+  justify-content: space-around;
+}
