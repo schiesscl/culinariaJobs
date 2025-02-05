@@ -7,7 +7,7 @@ import Register from '../pages/register/Register';
 import Main from '../main/Main';
 import UserHome from '../pages/userHome/UserHome';
 import UserProfile from '../pages/userProfile/UserProfile';
-import UserReview from '../pages/userReview/userReview';
+import UserReview from '../pages/userReview/UserReview';
 import UserEditProfile from '../pages/userEdit/UserEditProfile';
 
 import WorkDetails from '../pages/workDetails/WorkDetails';
@@ -45,65 +45,65 @@ const router = createBrowserRouter([
     {
         path: "/app",
         element: (
-            <ProtectedRoute allowedRoles={['user', 'admin']} path={"/"}>
+            // <ProtectedRoute allowedRoles={['user', 'admin']} path={"/"}>
             <Main />
-            </ProtectedRoute>
+            // </ProtectedRoute>
         ),
         children: [
             {
                 path: "userHome",
                 element: (
-                    <ProtectedRoute allowedRoles={['user', 'admin']} path={"/404"}>
+                    // <ProtectedRoute allowedRoles={['user', 'admin']} path={"/404"}>
                     <UserHome />
-                    </ProtectedRoute>
+                    // </ProtectedRoute>
                 )
             },
             {
                 path: "userProfile/:id",
                 element: (
-                    <ProtectedRoute allowedRoles={['user', 'admin']} path={"/404"}>
+                    // <ProtectedRoute allowedRoles={['user', 'admin']} path={"/404"}>
                     <UserProfile />
-                    </ProtectedRoute>
+                    // </ProtectedRoute>
                 )
             },
             {
                 path: "dashboard",
                 element: (
-                    <ProtectedRoute allowedRoles={['admin']} path={"/404"}>
+                    // <ProtectedRoute allowedRoles={['admin']} path={"/404"}>
                     <Dashboard />
-                    </ProtectedRoute>
+                    // </ProtectedRoute>
                 )
             },
             {
                 path: "userReview/:id",
                 element: (
-                    <ProtectedRoute allowedRoles={['admin']} path={"/404"}>
+                    // <ProtectedRoute allowedRoles={['admin']} path={"/404"}>
                     <UserReview />
-                    </ProtectedRoute>
+                    // </ProtectedRoute>
                 )
             },
             {
                 path: "userEditProfile/:id",
                 element: (
-                    <ProtectedRoute allowedRoles={['user', 'admin']} path={"/404"}>
+                    // <ProtectedRoute allowedRoles={['user', 'admin']} path={"/404"}>
                     <UserEditProfile />
-                    </ProtectedRoute>
+                    // </ProtectedRoute>
                 )
             },
             {
                 path: "workDetail/:id",
                 element: (
-                    <ProtectedRoute allowedRoles={['user', 'admin']} path={"/404"}>
+                    // <ProtectedRoute allowedRoles={['user', 'admin']} path={"/404"}>
                     <WorkDetails />
-                    </ProtectedRoute>
+                    // </ProtectedRoute>
                 )
             },
             {
                 path: "workEdit/:id",
                 element: (
-                    <ProtectedRoute allowedRoles={['admin']} path={"/404"}>
+                    // <ProtectedRoute allowedRoles={['admin']} path={"/404"}>
                     <WorkEdit />
-                    </ProtectedRoute>
+                    // </ProtectedRoute>
                 )
             }
         ]

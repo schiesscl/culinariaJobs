@@ -1,7 +1,7 @@
 .Dashboard-container {
     min-height: calc(100vh - 140px); /* Altura mínima para evitar superposición con header y footer */
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     padding: 5% 10%;
     gap: 50px;
 }
@@ -11,11 +11,14 @@
     width: 20%;
     border-radius: 15px;
     padding: 5% 2%;
-    background-color: #292929;
+    background-color: #56AB56;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 30px;
+    position: sticky;
+    top: 10%;
+    align-self: center;
 }
 
 .Dashboard-but-menu {
@@ -30,25 +33,36 @@
     padding: 10% 3%;
     border-radius: 0px 15px 15px 0px;
     font-size: 1.5rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: #FFD700; /* Color de fondo */
+    border: none; /* Quitar borde */
 }
 
 .btn-dasboard:hover {
-    background-color: #292929;
+    background-color: #b39700; /* Color de fondo más oscuro */
     color: white;
-    padding: 10% 3%;
-    border-radius: 0px 15px 15px 0px;
+    transform: scale(1.05);
 }
 
 .Dashboard-Vew {
-    background-color: #292929b2;
+    background-color: #F5F5F5;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center; /* Centrar verticalmente */
     padding: 3%;
     border-radius: 15px;
     gap: 30px;
     width: 100%;
     height: auto;
+}
+
+.ListWork-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrar verticalmente */
+    align-items: center;
+    width: 100%;
 }
 
 .user-card {
@@ -85,7 +99,7 @@
 .user-card a {
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #FFD700;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -95,5 +109,33 @@
 }
 
 .user-card a:hover {
-    background-color: #0056b3;
+    background-color: #b39700;
+}
+
+.work-card button {
+    background-color: #FFD700; /* Color de fondo */
+    border: none; /* Quitar borde */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    outline: none;
+}
+
+.work-card button:hover {
+    background-color: #b39700; /* Color de fondo más oscuro */
+    
+}
+
+.create-work-button {
+    background-color: #FFD700; /* Color de fondo */
+    border: none; /* Quitar borde */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.create-work-button:hover {
+    background-color: #b39700; /* Color de fondo más oscuro */
 }

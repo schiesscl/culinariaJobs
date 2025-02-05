@@ -58,7 +58,7 @@ const WorkByCategory = () => {
                                         <div>Restaurante: {work.restaurante}</div>
                                         <div>Turno: {work.turno}</div>
                                     </CardText>
-                                    <Btn title="más info" to={`/app/workDetail/${work.id}`} />
+                                    <a href={`/app/workDetail/${work.id}`} className="btn-more-info">Más info</a>
                                 </CardBody>
                             </Card>
                         </Col>
