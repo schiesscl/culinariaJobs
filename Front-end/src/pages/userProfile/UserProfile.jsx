@@ -1,10 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './UserProfileStyle.css';
 import UserProfileScript from './UserProfileScript';
+import Btn from '../../props/button/Btn';
 
 const UserProfile = () => {
 
-    const { data, professions, experience, education, cv } = UserProfileScript();
+    const { data, professions, experience, education, DeleteUser } = UserProfileScript();
 
     if (!data) {
         return (
@@ -53,12 +54,9 @@ const UserProfile = () => {
                             {education()}
                         </section>
                     </div>
-                    <section>
-                        {cv()}
-                    </section>
                     <div className="d-flex justify-content-end">
-                        <button className="btn btn-primary me-2">Editar</button>
-                        <button className="btn btn-danger">Eliminar</button>
+                        <Btn title="Editar" style="btn btn-primary me-2" to={`/app/userEditProfile/${data.id}`} />
+                        <Btn title="Eliminar" style="btn btn-danger" onClick={DeleteUser} />
                     </div>
                 </div>
             </div>

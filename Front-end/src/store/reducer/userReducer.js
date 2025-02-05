@@ -27,9 +27,9 @@ const inicialStateUser = {
         skills: ["Cocina rapida", "Trabajo en equipo", "Aprendizaje rapido"],
         aboutMe: "Soy un chef con 2 años de experiencia en cocina rapida, me gusta trabajar en equipo y aprender cosas nuevas",
         cv: "https://drive.google.com/file/d/",
-        rol: ""
+        rol: "admin"
     },
-    token: null
+    token: "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYm1iQGdtYWlsLmNvbSIsImlhdCI6MTczODcxNjMzNywiZXhwIjoxNzM4NzE5OTM3fQ.VQ8zUD0ELW4eakiv4IEJKNtsfodVJ-8nsM9ysDBKfFk"
 }
 
 const userReducer = createReducer(inicialStateUser, (builder) => builder
@@ -40,7 +40,7 @@ const userReducer = createReducer(inicialStateUser, (builder) => builder
             token: action.payload.token
         }
     })
-    .addCase(userLogout.fulfilled, (state, action) => {
+    .addCase(userLogout.fulfilled, (state) => {
         return {
             ...state,
             user: null,

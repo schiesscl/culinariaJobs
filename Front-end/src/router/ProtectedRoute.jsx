@@ -2,15 +2,14 @@ import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const ProtectedRoute = ({ children, allowedRoles, path }) => {
-
+    
     const userActive = useSelector(store => store.userReducer.user);
 
-    if(allowedRoles.includes("anyone") && userActive == null) 
-    {
+    if (allowedRoles.includes("anyone") && userActive == null) {
+        console.log("usuario: ", userActive)
         return children;
-    }
-
-    if (allowedRoles.includes(userActive.rol)) {
+    } else if (userActive && allowedRoles.includes(userActive.rol)) {
+        console.log("usuario: ", userActive)
         return children;
     }
 

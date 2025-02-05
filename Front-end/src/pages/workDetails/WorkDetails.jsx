@@ -3,28 +3,47 @@ import WorkDetailsScript from "./WorkDetailsScript";
 
 const WorkDetails = () => {
 
-    const { workView, userActiveRol, id} = WorkDetailsScript()
+    const { workView, userActiveRol, id } = WorkDetailsScript()
 
     console.log(userActiveRol);
     console.log("estoy viendo el trabajo", workView);
 
+    if(!workView)
+    {
+        return(<h1>Cargando</h1>)
+    }
+
     return (
-        <>
-            <h1>estoy en el trabajo: { id }</h1>
+        <div>
             <div>
-                {userActiveRol === "admin" ? (
-                    <div>
-                        <button>eliminar</button>
-                        <Btn title="Editar" to={`/app/workEdit/${id}`} />
-                    </div>
-                ) : null}
+                <div>
+                    <h1>
+                        {workView.category}
+                    </h1>
+                    <h3>
+                        {workView.title}
+                    </h3>
+                </div>
+                <div>
+                    <p>Restaurante:  {workView.restaurante}</p>
+                    <p>Salario: ${workView.salario}</p>
+                    <p>Turno: {workView.turno}</p>
+                </div>
+                <div>
+                    {userActiveRol === "admin" ? (
+                        <div>
+                            <button>eliminar</button>
+                            <Btn title="Editar" to={`/app/workEdit/${id}`} />
+                        </div>
+                    ) : null}
+                </div>
+                <div>
+                    {userActiveRol === "user" ? (
+                        <button>postularse</button>
+                    ) : null}
+                </div>
             </div>
-            <div>
-                {userActiveRol === "user" ? (
-                    <button>postularse</button>
-                ) : null}
-            </div>
-        </>
+        </div>
     );
 };
 
