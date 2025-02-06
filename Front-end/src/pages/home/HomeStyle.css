@@ -32,6 +32,35 @@
   .homeBotContainer {
     margin-top: 20px;
   }
+
+  .login-button {
+    background-color: #FFD700 !important; /* Color de fondo personalizado para el botón de Ingresar */
+    color: #fff !important; /* Color del texto */
+    border: none !important; /* Sin borde */
+    padding: 10px 20px; /* Relleno */
+    font-size: 1rem; /* Tamaño de fuente */
+    cursor: pointer; /* Cursor de puntero */
+    transition: background-color 0.3s ease; /* Transición suave */
+  }
+
+  .login-button:hover {
+    background-color: #e6c200 !important; /* Color de fondo al pasar el ratón */
+  }
+
+  .register-button {
+    background-color: #fff !important; /* Color de fondo personalizado para el botón de Registrarse */
+    color: #56AB56 !important; /* Color del texto */
+    border: 2px solid #56AB56 !important; /* Borde */
+    padding: 10px 20px; /* Relleno */
+    font-size: 1rem; /* Tamaño de fuente */
+    cursor: pointer; /* Cursor de puntero */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+  }
+
+  .register-button:hover {
+    background-color: #56AB56 !important; /* Color de fondo al pasar el ratón */
+    color: #fff !important; /* Color del texto al pasar el ratón */
+  }
   
   .logoContainer {
     display: flex;
@@ -66,6 +95,7 @@
     height: 400px; /* Altura fija */
     object-fit: cover; /* Mantiene la proporción y rellena el espacio */
     transition: transform 3s ease-in-out; /* Duración del efecto de zoom out */
+    filter: brightness(0.7); /* Ajustar brillo para mejorar visibilidad del texto */
   }
   
   .carousel-item.active .carousel-image {
@@ -99,4 +129,14 @@
 
   .text-dark {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);
-}
+  }
+
+  .text-custom {
+    color: #56AB56 !important; /* Color del texto personalizado */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra con color oscuro para mejor contraste */
+    font-size: 2rem; /* Tamaño de fuente del caption */
+  }
+
+  .carousel-caption p {
+    font-size: 1.5rem; /* Tamaño de fuente del subcaption */
+  }

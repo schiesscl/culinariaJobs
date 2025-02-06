@@ -1,6 +1,5 @@
 import './HomeStyle.css';
 import Button from 'react-bootstrap/Button';
-import Footer from '../../shared/footer/Footer';
 import React, { useState, useRef } from 'react';
 import {
   Carousel,
@@ -68,7 +67,7 @@ const Home = () => {
       >
         <img src={item.src} alt={item.altText} className="d-block w-100" />
         <CarouselCaption
-          className="text-dark"
+          className="text-custom"
           captionText={item.subCaption}
           captionHeader={item.caption}
         />
@@ -116,8 +115,8 @@ const Home = () => {
           </Carousel>
         </div>
         <div className="homeBotContainer d-flex justify-content-around w-100">
-          <Button variant="dark" href="/login">Ingresar</Button>
-          <Button variant="dark" href="/register">Registrarse</Button>
+          <Button className="login-button" href="/login">Ingresar</Button>
+          <Button className="register-button" href="/register">Registrarse</Button>
         </div>
       </div>
     </div>
