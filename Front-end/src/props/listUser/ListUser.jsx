@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Btn from "../button/Btn";
-
-import './ListUserStyle.css'
+import './ListUserStyle.css';
 
 const ListUser = ({ data }) => {
+
+    useEffect(() => {
+        if (Array.isArray(data)) {
+            console.log('Data actualizada:', data);
+        }
+    }, [data]);
+
+    if (!Array.isArray(data)) {
+        return <h1>Cargando...</h1>;
+    }
+
     return (
         <div className="container">
             <div className="row">

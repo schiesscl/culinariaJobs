@@ -1,5 +1,5 @@
 import { useSelector,useDispatch } from "react-redux"
-
+import { userDelete } from "../../store/action/userAction";
 
 const UserProfileScript = () => {
     const data = useSelector(store => store.userReducer.user);
@@ -64,9 +64,9 @@ const UserProfileScript = () => {
         }
     };
 
-    const DeleteUser = () => {
-        dispatch(DeleteUser(data.id))
-    }
+    const deleteUser = () => {
+        dispatch(userDelete(data.id))
+    };
 
 
     return {
@@ -75,7 +75,7 @@ const UserProfileScript = () => {
         experience,
         education,
         cv,
-        DeleteUser
+        deleteUser
     };
 }
 

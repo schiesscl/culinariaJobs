@@ -5,7 +5,7 @@ import Btn from '../../props/button/Btn';
 
 const UserProfile = () => {
 
-    const { data, professions, experience, education, DeleteUser } = UserProfileScript();
+    const { data, professions, experience, education, deleteUser } = UserProfileScript();
 
     if (!data) {
         return (
@@ -56,7 +56,7 @@ const UserProfile = () => {
                     </div>
                     <div className="d-flex justify-content-end">
                         <Btn title="Editar" style="btn btn-primary me-2" to={`/app/userEditProfile/${data.id}`} />
-                        <Btn title="Eliminar" style="btn btn-danger" onClick={DeleteUser} />
+                        <Btn title="Eliminar" style="btn btn-danger" onClick={deleteUser} />
                     </div>
                 </div>
             </div>

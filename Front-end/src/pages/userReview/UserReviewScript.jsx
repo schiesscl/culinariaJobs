@@ -1,6 +1,6 @@
 import { useSelector,useDispatch } from "react-redux"
 import { useParams } from "react-router-dom";
-import { getUserById } from "../../store/action/adminAction";
+import { getUserById, deleteUserByAdmin } from "../../store/action/adminAction";
 import { useEffect } from "react";
 
 const UserReviewScript = () => {
@@ -27,13 +27,14 @@ const UserReviewScript = () => {
 
 
     const DeleteUser = () => {
-        dispatch(DeleteUser(id))
+        dispatch(deleteUserByAdmin(id))
     }
 
 
     return {
         data,
-        professions
+        professions,
+        DeleteUser
     };
 }
 
