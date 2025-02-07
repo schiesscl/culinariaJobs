@@ -1,68 +1,67 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './UserProfileStyle.css';
+import UserProfileScript from './UserProfileScript';
+import Btn from '../../props/button/Btn';
 
+const UserProfile = () => {
 
-import './UserProfileStyle.css'
-import UserProfileScript from './UserProfileScript'
-import { useParams } from 'react-router-dom';
+    const { data, professions, experience, education, deleteUser } = UserProfileScript();
 
-const userProfile = () => {
-
-    const { id } = useParams()
-
-    console.log(id)
-
-    const { data, professions, experience, education, cv } = UserProfileScript();
+    if (!data) {
+        return (
+            <h1>Cargando</h1>
+        );
+    }
 
     return (
-        <div className="user-profile-container">
-            <div className='user-profile-card'>
-                <div className='user-profile-user-data'>
-                    <h2>
-                        {data.user.name + " " + data.user.lastName}
+        <div className="container user-profile-container" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
+            <div className='card user-profile-card'>
+
+                <div className='card-body user-profile-user-data'>
+                    <h2 className="card-title">
+                        {data.name + " " + data.last_name}
                     </h2>
                     <figure>
-                        <img className='user-photo-card' src={data.user.photo} alt="" />
+                        <img className='card-img-top user-photo-card' src={data.photo} alt="foto de usuario" />
                     </figure>
-                    <h3>
-                        {professions}
+                    <h3 className="card-subtitle mb-2 text-muted">
+                        {professions()}
                     </h3>
                     <div>
-                        <p>
-                            <strong>Email: {data.user.email} </strong>
+                        <p className="card-text">
+                            <strong>Email: {data.email}</strong>
                         </p>
-                        <p>
-                            <strong>Phone: {data.user.phone} </strong>
+                        <p className="card-text">
+                            <strong>Phone: {data.phone}</strong>
                         </p>
                     </div>
                 </div>
 
-                <div className='user-profile-user-desc'>
+                <div className='card-body user-profile-user-desc'>
                     <section>
                         <h3>About me</h3>
-                        <p>
-                            {data.user.aboutMe}
+                        <p className="card-text">
+                            {data.aboutMe}
                         </p>
                     </section>
                     <div>
                         <section>
                             <h3>Experience</h3>
-                            {experience}
+                            {experience()}
                         </section>
                         <section>
-                            <h3>Education</h3>
-                            {education}
+                            <h3>Educación</h3>
+                            {education()}
                         </section>
                     </div>
-                    <section>
-                        {cv}
-                    </section>
-                </div>
-                <div className='buttContainerProfile'>
-                    <button className='btnNoCountry'>Editar</button>
-                    <button className='btnNoCountry'>Eliminar</button>
+                    <div className="d-flex justify-content-end">
+                        <Btn title="Editar" style="btn btn-primary me-2" to={`/app/userEditProfile/${data.id}`} />
+                        <Btn title="Eliminar" style="btn btn-danger" onClick={deleteUser} />
+                    </div>
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default userProfile
+export default UserProfile;

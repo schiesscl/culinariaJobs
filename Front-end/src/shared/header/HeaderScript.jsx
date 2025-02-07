@@ -1,23 +1,29 @@
 import { useSelector } from "react-redux";
+import { useState } from "react";
+import NavBar from "../nav/NavBar";
 
-const HeaderScript = () => {
+const useHeaderScript = () => {
+    const [tipeMenu, setTipeMenu] = useState(null);
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-    const data = useSelector(store => store.userReducer);
+    const UserActive = useSelector(store => store.userReducer.user)
 
     const ShowMenu = () => {
-        if (data.user != null && data.user.rol === "user") {
-            return (
-                <div>
-                    <a href="/perfil">Perfil</a>
-                    <a href="/logout">Salir</a>
-                </div>
-            );
+        if (isMenuOpen) {
+            setTipeMenu(null);
+        } else {
+            setTipeMenu(<NavBar userActive={UserActive} />);
         }
-        return null;
-    }
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+
     return { 
-        ShowMenu
-     };
+        ShowMenu,
+        tipeMenu,
+        isMenuOpen,
+        UserActive
+    };
 }
 
-export default HeaderScript;
+export default useHeaderScript;

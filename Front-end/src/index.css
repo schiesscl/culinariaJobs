@@ -1,7 +1,14 @@
+@import'bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
 }
 
 .formContainer
@@ -74,13 +81,12 @@
     align-self: center;
     justify-content: space-around;
     width: 100%;
+    color: white !important;
 }
 
 
 .btnNoCountry 
 {
-    background-color: #f1f1f1;
-    color: #333;
     padding: 1rem 5%;
     border: 1px solid #333;
     border-radius: 15px;
@@ -96,5 +102,4 @@
 .btnNoCountry:hover 
 {
     background-color: #333;
-    color: #f1f1f1;
 }

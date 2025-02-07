@@ -1,0 +1,56 @@
+.cont-edit-perfile
+{
+  margin: 5% 20%;
+  padding: 5%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #F5F5F5;
+}
+
+.formTitle
+{
+  font-size: 3rem;
+}
+
+.formSection-EP
+{
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+
+}
+
+.laberContainer-EP
+{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 1.3rem;
+}
+
+.label-EP-inputs
+{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 15px;
+}
+
+.cont-checkbox
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.label-checkbox
+{
+  display: flex;
+  gap: 10px;
+}
+
+.buttContainer-EP
+{
+  margin-top: 3%;
+  display: flex;
+  justify-content: space-around;
+}

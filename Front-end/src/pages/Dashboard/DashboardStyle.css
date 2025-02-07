@@ -1,0 +1,140 @@
+.Dashboard-container {
+    min-height: calc(100vh - 140px); /* Altura mínima para evitar superposición con header y footer */
+    display: flex;
+    align-items: flex-start;
+    padding: 5% 10%;
+    gap: 50px;
+}
+
+.Dashboard-container-menu {
+    width: 20%;
+    height: 50dvh;
+    border-radius: 15px;
+    padding: 5% 2%;
+    background-color: #56AB56;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 30px;
+    align-self: center;
+}
+
+.Dashboard-but-menu {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    gap: 15px;
+}
+
+.btn-dasboard {
+    padding: 10% 3%;
+    border-radius: 0px 15px 15px 0px;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: #78bc78;
+    border: none; /* Quitar borde */
+}
+
+.btn-dasboard:hover {
+    background-color: #b39700; /* Color de fondo más oscuro */
+    color: white;
+    transform: scale(1.05);
+}
+
+.Dashboard-Vew {
+    display: flex;
+    height: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; /* Centrar verticalmente */
+    padding: 3%;
+    border-radius: 15px;
+    gap: 30px;
+    width: 100%;
+    height: auto;
+}
+
+.ListWork-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrar verticalmente */
+    align-items: center;
+    width: 100%;
+}
+
+.user-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.user-card img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.user-card h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.user-card p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #666;
+}
+
+.user-card a {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #FFD700;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    width: auto;
+}
+
+.user-card a:hover {
+    background-color: #b39700;
+}
+
+.work-card button {
+    background-color: #FFD700; /* Color de fondo */
+    border: none; /* Quitar borde */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    outline: none;
+}
+
+.work-card button:hover {
+    background-color: #b39700; /* Color de fondo más oscuro */
+    
+}
+
+.create-work-button {
+    background-color: #FFD700; /* Color de fondo */
+    border: none; /* Quitar borde */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.create-work-button:hover {
+    background-color: #b39700; /* Color de fondo más oscuro */
+}

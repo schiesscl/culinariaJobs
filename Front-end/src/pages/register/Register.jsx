@@ -1,48 +1,46 @@
 import Btn from '../../props/button/Btn';
+import { Link } from 'react-router-dom';
+import { Container, Card, Form, Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
+import './RegisterStyle.css';
 import RegisterScript from './RegisterScript';
-import './RegisterStyle.css'
 
 const Register = () => {
-
-  const { handleInput, handleRegister } = RegisterScript()
+  const { handleInput, handleRegister } = RegisterScript();
 
   return (
-    <div className="formContainer">
-      <div className='formCard'>
-          <h1 className='formTitle'>
-            Register
-          </h1>
-        <form onSubmit={handleRegister} className='formSection'>
-          <div className='laberContainer'>
-            <label htmlFor="">
-              Nombre:
-              <input className='inputForm' onChange={handleInput} type="mail" name='userName' />
-            </label>
-            <label htmlFor="">
-              Apellido:
-              <input className='inputForm' onChange={handleInput} type="mail" name='userLastName' />
-            </label>
-            <label htmlFor="">
-              Correo electronico:
-              <input className='inputForm' onChange={handleInput} type="mail" name='email' />
-            </label>
-            <label htmlFor="">
-              Contraseña:
-              <input className='inputForm' onChange={handleInput} type="password" name='password' />
-            </label>
-            <label htmlFor="">
-              Confirmar contraseña:
-              <input className='inputForm' onChange={handleInput} type="password" name='confirmpassword' />
-            </label>
-          </div>
-          <div className='buttContainer'>
-            <button className='btnNoCountry'>Registrarse</button>
-            <Btn  to={"/"} title={"volver"} />
-          </div>
-        </form>
-      </div>
-    </div>
+    <Container className='d-flex align-items-center justify-content-center' style={{ height: '100vh' }}>
+      <Card style={{ maxWidth: '500px', width: '100%' }}>
+        <Card.Body>
+          <h1 className='text-center'>Registro</h1>
+          <Form onSubmit={handleRegister}>
+            <Form.Group className='mb-3'>
+              <Form.Label>Nombre:</Form.Label>
+              <Form.Control onChange={handleInput} type="text" name='name' placeholder='Nombre' />
+            </Form.Group>
+            <Form.Group className='mb-3'>
+              <Form.Label>Apellido:</Form.Label>
+              <Form.Control onChange={handleInput} type="text" name='last_name' placeholder='Apellido' />
+            </Form.Group>
+            <Form.Group className='mb-3'>
+              <Form.Label>Correo electrónico:</Form.Label>
+              <Form.Control onChange={handleInput} type="text" name='email' placeholder='Correo electrónico' />
+            </Form.Group>
+            <Form.Group className='mb-3'>
+              <Form.Label>Contraseña:</Form.Label>
+              <Form.Control onChange={handleInput} type="password" name='password' placeholder='Contraseña' />
+            </Form.Group>
+            <div className='d-flex justify-content-between'>
+              <Button type='submit' className='btn-registrarse'>Registrarse</Button>
+              <Link to='/'>
+                <Button variant='outline-success' className='btn-volver'>Volver</Button>
+              </Link>
+            </div>
+          </Form>
+        </Card.Body>
+      </Card>
+    </Container>
   );
 }
 

@@ -8,11 +8,11 @@ const LoginScript = () =>
     const dispatch = useDispatch();
 
     const [loginData, setLoginData] = useState({
-        userName: '', 
-        password: ''
+        email:'', 
+        password:''
     });
 
-    const testo = useSelector(store => store);
+    const testo = useSelector(store => store.userReducer);
 
     const handleInput = async (event) => 
     {
@@ -32,11 +32,7 @@ const LoginScript = () =>
         } catch (error) {
             console.log('Error en la acción userLogin:', error);
         }
-        console.log('testo:', testo);
     }
-
-    
-    console.log('loginData:', loginData);
 
     return {
         handleInput,

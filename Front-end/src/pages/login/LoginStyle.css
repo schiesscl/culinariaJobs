@@ -1,0 +1,56 @@
+.container {
+  max-width: 500px;
+  margin: auto;
+}
+
+.card {
+  padding: 20px;
+}
+
+.text-center {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.labelForm {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.buttContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.btnNoCountry {
+  padding: 10px 20px;
+}
+
+.btn-secondary {
+  padding: 10px 20px;
+}
+
+.btn-ingresar {
+  background-color: #FFD700 !important; /* Color de fondo */
+  border: none !important; /* Quitar borde */
+  color: white !important;
+  transition: background-color 0.3s ease;
+}
+
+.btn-ingresar:hover {
+  background-color: #b39700 !important; /* Color de fondo más oscuro */
+}
+
+.btn-volver {
+  background-color: white !important; /* Color de fondo */
+  border: 2px solid #56AB56 !important; /* Borde */
+  color: #56AB56 !important; /* Color de letras */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-volver:hover {
+  background-color: #56AB56 !important; /* Color de fondo más oscuro */
+  color: white !important; /* Color de letras */
+}

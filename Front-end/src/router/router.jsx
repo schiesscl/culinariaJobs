@@ -7,8 +7,13 @@ import Register from '../pages/register/Register';
 import Main from '../main/Main';
 import UserHome from '../pages/userHome/UserHome';
 import UserProfile from '../pages/userProfile/UserProfile';
+import UserReview from '../pages/userReview/UserReview';
+import UserEditProfile from '../pages/userEdit/UserEditProfile';
 
-import Dashboard from '../pages/Dashboard/Dashboard'; 
+import WorkDetails from '../pages/workDetails/WorkDetails';
+import WorkEdit from '../pages/workEdit/WorkEdit';
+
+import Dashboard from '../pages/Dashboard/Dashboard';
 
 import ProtectedRoute from './ProtectedRoute';
 
@@ -16,7 +21,7 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: (
-            <ProtectedRoute allowedRoles={"anyone"} path={"/app/userHome"}>
+            <ProtectedRoute allowedRoles={["anyone"]} path={"/app/userHome"}>
                 <Home />
             </ProtectedRoute>
         )
@@ -24,7 +29,7 @@ const router = createBrowserRouter([
     {
         path: "/login",
         element: (
-            <ProtectedRoute allowedRoles={"anyone"} path={"/app/userHome"}>
+            <ProtectedRoute allowedRoles={["anyone"]} path={"/app/userHome"}>
                 <Login />
             </ProtectedRoute>
         )
@@ -32,7 +37,7 @@ const router = createBrowserRouter([
     {
         path: "/register",
         element: (
-            <ProtectedRoute allowedRoles={"anyone"} path={"/app/userHome"}>
+            <ProtectedRoute allowedRoles={["anyone"]} path={"/app/userHome"}>
                 <Register />
             </ProtectedRoute>
         )
@@ -40,7 +45,7 @@ const router = createBrowserRouter([
     {
         path: "/app",
         element: (
-            <ProtectedRoute allowedRoles={['user', 'admin']} path={"/"}>
+            <ProtectedRoute allowedRoles={[1, 2]} path={"/"}>
                 <Main />
             </ProtectedRoute>
         ),
@@ -48,7 +53,7 @@ const router = createBrowserRouter([
             {
                 path: "userHome",
                 element: (
-                    <ProtectedRoute allowedRoles={['user', 'admin']} path={"/404"}>
+                    <ProtectedRoute allowedRoles={[1, 2]} path={"/404"}>
                         <UserHome />
                     </ProtectedRoute>
                 )
@@ -56,7 +61,7 @@ const router = createBrowserRouter([
             {
                 path: "userProfile/:id",
                 element: (
-                    <ProtectedRoute allowedRoles={['user', 'admin']} path={"/404"}>
+                    <ProtectedRoute allowedRoles={[1, 2]} path={"/404"}>
                         <UserProfile />
                     </ProtectedRoute>
                 )
@@ -64,8 +69,40 @@ const router = createBrowserRouter([
             {
                 path: "dashboard",
                 element: (
-                    <ProtectedRoute allowedRoles={['admin']} path={"/404"}>
+                    <ProtectedRoute allowedRoles={[2]} path={"/404"}>
                         <Dashboard />
+                    </ProtectedRoute>
+                )
+            },
+            {
+                path: "userReview/:id",
+                element: (
+                    <ProtectedRoute allowedRoles={[2]} path={"/404"}>
+                        <UserReview />
+                    </ProtectedRoute>
+                )
+            },
+            {
+                path: "userEditProfile/:id",
+                element: (
+                    <ProtectedRoute allowedRoles={[1, 2]} path={"/404"}>
+                        <UserEditProfile />
+                    </ProtectedRoute>
+                )
+            },
+            {
+                path: "workDetail/:id",
+                element: (
+                    <ProtectedRoute allowedRoles={[1, 2]} path={"/404"}>
+                        <WorkDetails />
+                    </ProtectedRoute>
+                )
+            },
+            {
+                path: "workEdit/:id",
+                element: (
+                    <ProtectedRoute allowedRoles={[2]} path={"/404"}>
+                        <WorkEdit />
                     </ProtectedRoute>
                 )
             }

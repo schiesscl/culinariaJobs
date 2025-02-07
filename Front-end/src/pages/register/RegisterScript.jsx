@@ -4,14 +4,18 @@ import { userRegister } from '../../store/action/userAction';
 
 const RegisterScript = () => 
 {
+
+    /*
+    Testiado - funciona perfecto
+    */
+
     const dispatch = useDispatch();
 
     const [registerData, setRegisterData] = useState({
-        userName: '',
-        userLastName: '',
+        name: '',
+        last_name: '',
         email: '',
         password: '',
-        confirmpassword: ''
     })
 
     const handleInput = async (event) => 
@@ -26,6 +30,8 @@ const RegisterScript = () =>
     const handleRegister = async (event) => {
         event.preventDefault();
 
+        console.log(registerData)
+
         try {
             dispatch(userRegister(registerData));
         } catch (error) {
@@ -33,8 +39,6 @@ const RegisterScript = () =>
         }
 
     }
-
-    console.log(registerData)
 
     return {
         handleInput,

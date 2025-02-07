@@ -2,9 +2,9 @@ import { Link as Anchor } from "react-router-dom";
 
 import './BtnStyle.css'
 
-const Btn = ({ title, to, sice, modStyle }) => {
+const Btn = ({ title, to, style, onClick }) => {
   return (
-    <Anchor to={to} className={`btnNoCountry ${sice} ${modStyle}`}>{title}</Anchor>
+    <Anchor className={style} onClick={onClick} to={to}>{title}</Anchor>
   )
 }
 
