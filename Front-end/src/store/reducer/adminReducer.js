@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { getUsers, getUserById } from "../action/adminAction";
+import { getUsers, getUserById, deleteUserByAdmin } from "../action/adminAction";
 
 const inicialStateAdmin = {
     users: null
@@ -17,6 +17,12 @@ const adminReducer = createReducer(inicialStateAdmin,
         return {
             ...state,
             users: action.payload.users
+        }
+    })
+    .addCase( deleteUserByAdmin.fulfilled, (state, action) => {
+        return{
+            ...state,
+            user: action.payload.user
         }
     })
 )

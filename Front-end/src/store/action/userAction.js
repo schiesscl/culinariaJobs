@@ -30,10 +30,6 @@ export const userLogin = createAsyncThunk('userLogin', async (obj) => {
 
 export const userLogout = createAsyncThunk('userLogout', async () => {
     try {
-        //let token = localStorage.getItem('token')
-        //let configs = { headers: { 'Authorization': `Bearer ${token}` } }
-
-        //await axios.post(`${BASE_URL}/auth/logout`, null, configs);
 
         localStorage.removeItem('token');
         localStorage.removeItem('user');
@@ -67,23 +63,39 @@ export const userRegister = createAsyncThunk('userRegister', async (obj) => {
     }
 })
 
-export const userEdit = createAsyncThunk('userEdit', async (obj) => {
+export const userEdit = createAsyncThunk('userEdit', async ({ id, userData }) => {
     try {
-        const { data } = await axios.put(`${BASE_URL}/auth/edit`, obj)
+        let token = localStorage.getItem('token');
+        let configs = { headers: { 'Authorization': `Bearer ${token}` } };
+
+        console.log('Token:', token);  
+        console.log('Configs:', configs);  
+        console.log('UserData:', userData);  
+
+        const { data } = await axios.put(`${BASE_URL}/users/${id}`, userData, configs);
         return {
-            user: data.response.user
-        }
+            user: data.response
+        };
     } catch (error) {
         console.error('Error editing user:', error);
         return {
             user: null
         };
     }
-})
+});
 
-export const userDelete = createAsyncThunk('userDelete', async (id) => {
+export const userDelete = createAsyncThunk('userDelete', async (email) => {
     try {
-        await axios.delete(`${BASE_URL}/auth/delete/${id}`);
+        console.log(id)
+
+        let token = localStorage.getItem('token');
+        let configs = { headers: { 'Authorization': `Bearer ${token}` } }
+
+        await axios.delete(`${BASE_URL}/auth/by-email/${email}`, configs);
+
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+
         return {
             user: null,
             token: null,

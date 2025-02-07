@@ -14,7 +14,7 @@ const UserEditProfile = () => {
           <h1 className='formTitle'>Editar Perfil</h1>
         </div>
         <div>
-          <form onSubmit={handleEdit} className='formSection-EP'>
+          <form className='formSection-EP'>
             <div className='laberContainer-EP'>
               <label htmlFor="name" className="label-EP-inputs">
                 Nombre:
@@ -22,7 +22,7 @@ const UserEditProfile = () => {
               </label>
               <label htmlFor="lastName" className="label-EP-inputs">
                 Apellido:
-                <input className='' onChange={handleInput} type="text" name='lastName' id='lastName' />
+                <input className='' onChange={handleInput} type="text" name='last_name' id='lastName' />
               </label>
               <label htmlFor="photo" className="label-EP-inputs">
                 Foto:
@@ -72,7 +72,7 @@ const UserEditProfile = () => {
               </label>
             </div>
             <div className='buttContainer-EP'>
-              <button className='btn btn-success'>Guardar Cambios</button>
+              <Btn title="Guardar Cambios" style="btn btn-success" onClick={handleEdit} />
               <Btn to={`/app/userProfile/${id}`} title={"Volver"} style="btn btn-light" />
             </div>
           </form>

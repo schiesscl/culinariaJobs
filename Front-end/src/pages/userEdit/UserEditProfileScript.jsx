@@ -1,9 +1,11 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { userEdit } from "../../store/action/userAction";
 
 const UserEditProfileScript = () => {
     const dispatch = useDispatch();
+
+    const userActive = useSelector(store => store.userReducer.user);
 
     const [editData, setEditData] = useState({
         name: '',
@@ -44,7 +46,7 @@ const UserEditProfileScript = () => {
     const handleEdit = async (event) => {
         event.preventDefault();
         try {
-            dispatch(userEdit(editData));
+            dispatch(userEdit({ id: userActive.id, userData: editData }));
         } catch (error) {
             console.error('Error en la acción userEdit:', error);
         }
