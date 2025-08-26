@@ -1,4 +1,4 @@
-import WorkByCategory from "../../props/workByCategory/workByCategory";
+import WorkByCategory from "../../props/workByCategory/WorkByCategory";
 import "./UserHomeStyle.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
