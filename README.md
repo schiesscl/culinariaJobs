@@ -1,4 +1,4 @@
-# CulinariJobs | Proyecto NoCountry
+# CulinariaJobs | Proyecto NoCountry
 
 ## Descripción del Proyecto
 
@@ -25,3 +25,4 @@ Nuestro servicio principal es la redacción de ofertas laborales para cubrir vac
 ## Manual de uso Frontend
 
 ## Manual de uso Backend
+
